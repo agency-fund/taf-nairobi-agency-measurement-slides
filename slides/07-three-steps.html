@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Three steps</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .ts-steps { margin-top: 46px; flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 0; max-width: 1600px; }
+  .ts-step { display: flex; gap: 40px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
+  .ts-step:last-child { border-bottom: none; }
+  .ts-step .num { font-size: 60px; font-weight: 900; color: var(--gold); line-height: 1;
+    flex-shrink: 0; width: 72px; font-variant-numeric: tabular-nums; }
+  .ts-step .t { margin: 0 0 8px; font-size: 32px; font-weight: 800; color: var(--navy); line-height: 1.2; }
+  .ts-step .d { margin: 0; font-size: 24px; font-weight: 400; color: var(--ink-secondary); line-height: 1.45; max-width: 1400px; }
+  .ts-step .d strong { color: var(--navy); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow" data-reveal>How we suggest you do it</p>
+    <h1 data-reveal>Teams should specify what agency means for <span class="accent">their specific users and contexts</span></h1>
+
+    <div class="ts-steps">
+      <div class="ts-step" data-reveal>
+        <span class="num">1</span>
+        <div>
+          <p class="t">Define agency for your local problem</p>
+          <p class="d">What kind of agency is the tool supposed to support? For whom? To what end? Use the two distinctions to move from a broad idea to a structured definition: agency with respect to the <strong>end goals</strong> versus the <strong>digital tool</strong>, and agency that is <strong>internally experienced</strong> versus <strong>externally expressed</strong>.</p>
+        </div>
+      </div>
+      <div class="ts-step" data-reveal>
+        <span class="num">2</span>
+        <div>
+          <p class="t">Measure with the right tools, on the right data, at the right moment</p>
+          <p class="d"><strong>On-platform:</strong> in-app surveys, chatbot interactions, task behavior, and other digital traces. <strong>Off-platform:</strong> phone and in-person surveys, interviews, observations, administrative records. Self-reports are the most common tool and carry known biases; digital traces reveal what surveys miss, especially when linked to users' goals.</p>
+        </div>
+      </div>
+      <div class="ts-step" data-reveal>
+        <span class="num">3</span>
+        <div>
+          <p class="t">Test and validate your measurement tools iteratively</p>
+          <p class="d">A measure is <strong>reliable</strong> if it produces consistent results under similar conditions. It has <strong>construct validity</strong> if it captures agency as you define it rather than a neighbor like mood or satisfaction, <strong>content validity</strong> if it covers the parts of agency that matter in your context, and <strong>criterion validity</strong> if its scores track outcomes you trust. For LLM-based measurement, compare the model's ratings against a gold-standard dataset coded by trained human reviewers using a clear rubric.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

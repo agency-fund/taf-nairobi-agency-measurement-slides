@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Closing</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  body.dark .slide { justify-content: center; position: relative; padding: 130px 150px;
+    background: radial-gradient(120% 120% at 30% 20%, #0B2341, #061A2E 75%); }
+  .topbar { position: absolute; top: 100px; left: 150px; }
+  .cl-title { margin: 0; font-size: 78px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.02em; color: var(--white); max-width: 1560px; }
+  .cl-title .accent { color: var(--gold); }
+  .cl-tools { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 1620px; }
+  .cl-tool { display: block; text-decoration: none; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.16); border-radius: 12px; padding: 26px 32px;
+    transition: border-color 150ms ease, background 150ms ease; }
+  .cl-tool:hover { border-color: var(--gold); background: rgba(255,255,255,0.08); }
+  .cl-tool .t { margin: 0 0 6px; font-size: 26px; font-weight: 800; color: var(--white); }
+  .cl-tool .t span { color: var(--gold); }
+  .cl-tool .d { margin: 0; font-size: 21px; line-height: 1.4; color: #C9D4E0; }
+  .cl-footer { position: absolute; left: 150px; right: 150px; bottom: 92px;
+    border-top: 1px solid rgba(255,255,255,0.18); padding-top: 30px;
+    display: flex; justify-content: space-between; align-items: baseline; }
+  .cl-footer a { font-size: 24px; font-weight: 700; color: var(--gold); text-decoration: none; }
+  .cl-footer .org { font-size: 22px; color: #8FA3B8; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body class="dark">
+  <div class="slide">
+    <div class="topbar" data-reveal>
+      <span class="wordmark">The Agency Fund</span>
+    </div>
+    <h1 class="cl-title" data-reveal>Agency measurement is interesting, necessary, and complex. <span class="accent">Start anyway.</span></h1>
+
+    <div class="cl-tools">
+      <a class="cl-tool" data-reveal href="https://theagencyfund.substack.com/p/measuring-agency-in-a-digital-context" target="_blank" rel="noopener">
+        <p class="t">The blog <span>&rarr;</span></p>
+        <p class="d">Measuring Agency in a Digital Context, by The Agency Fund and Google Jigsaw</p>
+      </a>
+      <a class="cl-tool" data-reveal href="https://github.com/agency-fund/taf-skills/tree/main/ask-agency-measurement" target="_blank" rel="noopener">
+        <p class="t">The Claude skill <span>&rarr;</span></p>
+        <p class="d">ask-agency-measurement: a coach that turns these frameworks into a plan for your product</p>
+      </a>
+      <a class="cl-tool" data-reveal href="https://notebooklm.google.com/notebook/fc5c61b3-a3b8-462a-9ed2-9778d70f8386" target="_blank" rel="noopener">
+        <p class="t">The NotebookLM <span>&rarr;</span></p>
+        <p class="d">Curated papers and validated agency scales you can interrogate conversationally</p>
+      </a>
+      <a class="cl-tool" data-reveal href="https://eval.playbook.org.ai" target="_blank" rel="noopener">
+        <p class="t">The evaluation playbook <span>&rarr;</span></p>
+        <p class="d">The full four-level framework for evaluating GenAI products, level by level</p>
+      </a>
+    </div>
+
+    <div class="cl-footer" data-reveal>
+      <a href="mailto:michael@agency.fund">michael@agency.fund</a>
+      <span class="org">The Agency Fund &middot; Nairobi Onsite</span>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Measuring Agency in AI Products</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  body.dark .slide { justify-content: center; position: relative; padding: 130px 150px;
+    background: radial-gradient(120% 120% at 30% 20%, #0B2341, #061A2E 75%); }
+  .topbar { position: absolute; top: 100px; left: 150px; right: 150px;
+    display: flex; align-items: center; justify-content: space-between; }
+  .cv-eyebrow { font-size: 24px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--slate-blue); margin: 0 0 36px; }
+  .cv-title { margin: 0; font-size: 116px; font-weight: 800; line-height: 1.04;
+    letter-spacing: -0.02em; color: var(--white); max-width: 1560px; }
+  .cv-title .accent { color: var(--gold); }
+  .cv-sub { margin: 44px 0 0; font-size: 32px; font-weight: 400; line-height: 1.5;
+    color: #C9D4E0; max-width: 1280px; }
+  .cv-footer { position: absolute; left: 150px; right: 150px; bottom: 96px;
+    border-top: 1px solid rgba(255,255,255,0.18); padding-top: 34px;
+    display: flex; align-items: baseline; justify-content: space-between; }
+  .cv-footer .who { font-size: 26px; font-weight: 600; color: var(--white); }
+  .cv-footer .who span { font-weight: 400; color: #8FA3B8; }
+  .cv-footer .where { font-size: 24px; font-weight: 500; color: #8FA3B8;
+    letter-spacing: 0.06em; text-transform: uppercase; }
+</style>
+</head>
+<body class="dark">
+  <div class="slide">
+    <div class="topbar" data-reveal>
+      <span class="wordmark">The Agency Fund</span>
+    </div>
+    <p class="cv-eyebrow" data-reveal>2026 Nairobi Onsite &middot; Talk + Workshop &middot; 90 minutes</p>
+    <h1 class="cv-title" data-reveal>Measuring <span class="accent">agency</span> in a digital context</h1>
+    <p class="cv-sub" data-reveal> How can we tell when digital tool use is expanding or undermining human agency? What is agency? Why should we measure it? How can we measure it to know whether digital tools are actually supporting it?</p>
+    <div class="cv-footer" data-reveal>
+      <span class="who">Zezhen Wu <span>&middot; Behavioral Scientist, The Agency Fund</span></span>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

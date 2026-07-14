@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Facilitation crib — Measuring Agency, Nairobi onsite</title>
+<style>
+  :root { --navy: #003366; --navy-deep: #0B2341; --gold: #F1B505; --ink: #212529;
+    --muted: #868E96; --border: #DEE2E6; --brick: #B3361F; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    margin: 0; padding: 28px 36px; color: var(--ink); font-size: 13px; line-height: 1.45; }
+  h1 { font-size: 22px; color: var(--navy); margin: 0 0 2px; }
+  .sub { color: var(--muted); margin: 0 0 18px; font-size: 13px; }
+  h2 { font-size: 15px; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em;
+    border-bottom: 2px solid var(--gold); padding-bottom: 4px; margin: 20px 0 10px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  td.t { white-space: nowrap; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  ul { margin: 6px 0; padding-left: 18px; }
+  li { margin-bottom: 5px; }
+  .warn { background: #FDF2F0; border-left: 4px solid var(--brick); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+  .gold { background: #FFF9E6; border-left: 4px solid var(--gold); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+  strong { color: var(--navy); }
+  code { background: #F1F3F5; border-radius: 4px; padding: 1px 5px; font-size: 12px; }
+  @media print { body { padding: 0; } .pagebreak { page-break-before: always; } }
+</style>
+</head>
+<body>
+
+<h1>Facilitation crib: Measuring Agency in AI Products</h1>
+<p class="sub">Nairobi onsite &middot; ~65 minutes &middot; multiple dozens of participants &middot; round tables of 5-6 &middot; solo facilitator</p>
+
+<h2>Run of show</h2>
+<table>
+  <tr><th>Clock</th><th>Segment</th><th>Notes to self</th></tr>
+  <tr><td class="t">0:00-0:04</td><td>Settle + the flywheel (slide 2)</td><td>Open on the foundation, not on AI. AI enters as touchpoints on the same loop.</td></tr>
+  <tr><td class="t">0:04-0:09</td><td>Gain and loss examples (slides 3-4)</td><td>Personal, proxy, collective. Land the closer: every user on the losses slide looks like a dashboard success.</td></tr>
+  <tr><td class="t">0:09-0:19</td><td>Definitions, 2x2, four levels, three steps, scope caveat (slides 5-9)</td><td>Roughly 2 min per slide. Slide 9 manages expectations: transcripts are one way in, not the toolbox.</td></tr>
+  <tr><td class="t">0:19-0:23</td><td>Launch (slides 10-11)</td><td>Card piles out BEFORE the session. One card per person. Pairs OK for phone-less people.</td></tr>
+  <tr><td class="t">0:23-0:35</td><td>Individual coding (slide 12 stays up)</td><td>Circulate. Nudge people past item 1 by minute 5. "Mixed + a note beats a confident guess."</td></tr>
+  <tr><td class="t">0:35-0:42</td><td>Table adjudication</td><td>Prompt: find one conversation where you split, argue the evidence, nominate the hardest case.</td></tr>
+  <tr><td class="t">0:42-0:51</td><td>Debrief (slide 13 + live Calibrate)</td><td>Agreement view per domain, then the pre-run LLM judge. 2-3 tables share their hard case. Land the scaling point: validated rubric + LLM = consistent measurement at scale.</td></tr>
+  <tr><td class="t">0:51-0:58</td><td>Close (slide 14)</td><td>Message: interesting, necessary, complex, start anyway. Point at the four take-home tools.</td></tr>
+  <tr><td class="t">0:58-0:65</td><td>Q&amp;A / buffer</td><td>If running long, Q&amp;A absorbs the overrun; the close does not get cut.</td></tr>
+</table>
+
+<div class="cols">
+<div>
+<h2>Calibrate setup (before the day)</h2>
+<ul>
+  <li>Create <strong>3 annotation tasks</strong>, one per domain, from <code>workshop-data/*.csv</code> (6 conversations each, keep upload order: it is the intended coding order).</li>
+  <li>Configure <strong>4 evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (Bandura processes Q1-Q3, modes-of-agency Q4). Answer options: <strong>Yes / No / Mixed</strong>, reasoning optional.</li>
+  <li>Generate <strong>~20 labeller links per task</strong>, paste into <code>qr-cards-template.html</code>, print, cut, stack by color.</li>
+  <li><strong>Pre-run the LLM evaluator</strong> on all 18 items with the same four questions. The debrief reveal must not depend on a live API call.</li>
+  <li>Open a labeller link <strong>on your own phone</strong>: confirm the labeling UI is usable on mobile.</li>
+  <li>Dry-run the full loop with 2-3 colleagues: code, adjudicate, read the agreement view. Time it.</li>
+</ul>
+
+<h2>Asks for Aman</h2>
+<ul>
+  <li>Bulk generation of ~60 labeller links (or the fastest manual route).</li>
+  <li>Confirm the agreement summary view can be shown per task on a projector mid-session, refreshed live.</li>
+  <li>Confirm an evaluation run on annotation items can be triggered (or pre-run) and compared against human labels in one view.</li>
+</ul>
+</div>
+
+<div>
+<h2>Contingencies</h2>
+<div class="warn">
+  <strong>Wifi dies:</strong> print the 18 transcripts beforehand (one set per table). Coding happens on paper against slide 12; adjudication and debrief proceed; slide 13 walks the same three beats without live numbers, and the Noora Health experience carries the calibration point.
+</div>
+<ul>
+  <li><strong>Turnout much smaller than expected:</strong> drop to two domains (education + whichever fits the room); merge tables to 4+ coders each so agreement stats still mean something.</li>
+  <li><strong>Turnout much larger:</strong> cards run out at 20/domain; pairs share a link, which is fine: pair-consensus labels still disagree across pairs.</li>
+  <li><strong>Running 10 min behind after the talk:</strong> cut coding to 8 min and adjudication to 5. Never cut the debrief: it carries the whole lesson.</li>
+  <li><strong>A table finishes early:</strong> send them to item 03 (the ambiguous flagship) if they skipped it, or ask them to draft one improvement to any question's wording.</li>
+</ul>
+
+<h2>Debrief ammunition</h2>
+<div class="gold">
+  <strong>Flagship disagreement items:</strong> EDU-03 (is an adopted goal her own?), HEA-03 (yielded to mother-in-law, and mobilizing her husband is proxy and collective agency in one turn), AGR-03 (bought seed, stalled planting). <strong>The Q3 nuance:</strong> EDU-02 and AGR-02 say they feel great while refusing to reflect; EDU-04 and HEA-02 reflect honestly with low confidence. Reflectiveness and confidence are different constructs.<br><br>
+  <strong>AGR-04 provocation if discussion stalls:</strong> Peter passively follows good advice in a crisis. Is low measured agency a problem here at all, or exactly what a good tool should produce in an emergency?
+</div>
+</div>
+</div>
+
+<h2>Materials checklist (day before)</h2>
+<ul>
+  <li>Deck opens offline from <code>index.html</code> (double-click, no server needed); PDF backup <code>agency-measurement-deck.pdf</code> on a USB stick.</li>
+  <li>QR cards printed and cut, three colored stacks; a handful of spare blank cards with the fallback landing URL handwritten.</li>
+  <li>Printed transcript sets (wifi contingency), one per table.</li>
+  <li>Calibrate: 3 tasks live, links tested, LLM evaluation pre-run, agreement views bookmarked in three browser tabs.</li>
+  <li>This crib sheet, printed.</li>
+</ul>
+
+</body>
+</html>

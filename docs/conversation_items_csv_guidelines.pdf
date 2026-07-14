@@ -1,0 +1,377 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 3129
+>>
+stream
+0.200025 w
+0 G
+BT
+/F2 22 Tf
+25.2999999999999972 TL
+0.078 g
+56. 763.8899999999999864 Td
+(Bulk upload — Conversation labelling items) Tj
+ET
+0.86 0.88 0.9 RG
+0.8 w
+56. 754.1899999999999409 m
+539.2799999999999727 754.1899999999999409 l
+S
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.275 0.294 0.333 rg
+56. 731.1899999999999409 Td
+(Upload a CSV with the following columns. Each row creates one conversation annotation item.) Tj
+ET
+BT
+/F6 13 Tf
+14.9499999999999993 TL
+0.078 0.137 0.353 rg
+56. 708.3399999999999181 Td
+(name) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 690.7899999999999636 Td
+(A name for the item.) Tj
+ET
+BT
+/F6 13 Tf
+14.9499999999999993 TL
+0.078 0.137 0.353 rg
+56. 663.9399999999999409 Td
+(transcript) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 646.3899999999999864 Td
+(A JSON array of chat messages representing the full conversation. Each message is an object) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 631.5399999999999636 Td
+(with a "role" and "content" field.) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 601.8399999999999181 Td
+(role — either "user" or "assistant") Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 586.9900000000000091 Td
+(content — the message said by that role) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 572.1399999999999864 Td
+(created_at — \(optional\) ISO-8601 timestamp for when this turn happened) Tj
+ET
+0.96 0.96 0.97 rg
+0.88 0.89 0.91 RG
+72. 564.2899999999999636 m
+535.2799999999999727 564.2899999999999636 l
+537.4891389993231314 564.2899999999999636 539.2799999999999727 562.4991389993231223 539.2799999999999727 560.2899999999999636 c
+539.2799999999999727 493.2899999999999636 l
+539.2799999999999727 491.0808610006768049 537.070861000676814 489.2899999999999636 535.2799999999999727 489.2899999999999636 c
+72. 489.2899999999999636 l
+69.7908610006768271 489.2899999999999636 68. 491.4991389993231223 68. 493.2899999999999636 c
+68. 560.2899999999999636 l
+68. 562.4991389993231223 70.2091389993231729 564.2899999999999636 72. 564.2899999999999636 c
+h
+B
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.157 0.196 0.275 rg
+76. 549.2899999999999636 Td
+([) Tj
+ET
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.157 0.196 0.275 rg
+76. 536.6899999999999409 Td
+(  {"role": "assistant", "content": "Hi, how can I help?", "created_at":) Tj
+ET
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.157 0.196 0.275 rg
+76. 524.0899999999999181 Td
+("2026-05-18T09:14:02Z"},) Tj
+ET
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.157 0.196 0.275 rg
+76. 511.4899999999998954 Td
+(  {"role": "user", "content": "I lost my card"}) Tj
+ET
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.157 0.196 0.275 rg
+76. 498.8899999999998727 Td
+(]) Tj
+ET
+BT
+/F6 13 Tf
+14.9499999999999993 TL
+0.078 0.137 0.353 rg
+56. 462.2899999999999636 Td
+(description) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 444.7399999999999523 Td
+(\(optional\) A description of this item. Shown to annotators alongside the evaluators while they) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.157 0.176 0.216 rg
+68. 429.8899999999999295 Td
+(label.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+/F4 8 0 R
+/F5 9 0 R
+/F6 10 0 R
+/F7 11 0 R
+/F8 12 0 R
+/F9 13 0 R
+/F10 14 0 R
+/F11 15 0 R
+/F12 16 0 R
+/F13 17 0 R
+/F14 18 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+19 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260713115324-04'00')
+>>
+endobj
+20 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000003333 00000 n 
+0000005150 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000003390 00000 n 
+0000003515 00000 n 
+0000003645 00000 n 
+0000003778 00000 n 
+0000003915 00000 n 
+0000004038 00000 n 
+0000004167 00000 n 
+0000004299 00000 n 
+0000004435 00000 n 
+0000004563 00000 n 
+0000004690 00000 n 
+0000004819 00000 n 
+0000004952 00000 n 
+0000005054 00000 n 
+0000005398 00000 n 
+0000005484 00000 n 
+trailer
+<<
+/Size 21
+/Root 20 0 R
+/Info 19 0 R
+/ID [ <1395E4E040CD8F7A2DDC2D741316BA01> <1395E4E040CD8F7A2DDC2D741316BA01> ]
+>>
+startxref
+5588
+%%EOF

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Part 2: Workshop</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  body.dark .slide { justify-content: center; position: relative; padding: 130px 150px;
+    background: radial-gradient(120% 120% at 30% 20%, #0B2341, #061A2E 75%); }
+  .topbar { position: absolute; top: 110px; left: 150px; display: flex; align-items: center; gap: 22px; }
+  .d-eyebrow { font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 30px; }
+  .assertion { margin: 0; font-size: 92px; font-weight: 800; line-height: 1.05;
+    letter-spacing: -0.02em; color: var(--white); max-width: 1500px; }
+  .assertion .accent { color: var(--gold); }
+  .d-sub { margin: 40px 0 0; font-size: 30px; font-weight: 400; line-height: 1.5; color: #C9D4E0; max-width: 1200px; }
+</style>
+</head>
+<body class="dark">
+  <div class="slide">
+    <div class="topbar" data-reveal>
+      <span class="wordmark">The Agency Fund</span>
+    </div>
+    <p class="d-eyebrow" data-reveal>Part 2 &middot; Workshop</p>
+    <h1 class="assertion" data-reveal="scale">Now you find the agency, <span class="accent">line by line</span>.</h1>
+    <p class="d-sub" data-reveal>Why conversations? Because they can hold rich signals of agency, especially when a human is talking with an AI. You will read 18 synthetic conversations across three domains, answer four questions and an open note, and compare your labels with an AI judge at the end.</p>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

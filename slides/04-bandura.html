@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bandura's four elements of agency</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .bd-intro { margin: 26px 0 0; font-size: 23px; line-height: 1.48; color: var(--ink-secondary); max-width: 1560px; }
+  .bd-intro strong { color: var(--navy); }
+  .bd-intro a { color: #6699CC; text-decoration: underline; text-underline-offset: 3px; }
+  .bd-grid { margin-top: 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; flex: 1; min-height: 0; }
+  .bd-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow-md); padding: 26px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .bd-head { display: flex; align-items: baseline; gap: 14px; }
+  .bd-head .num { font-size: 44px; font-weight: 900; color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+  .bd-head .t { margin: 0; font-size: 25px; font-weight: 800; color: var(--navy); line-height: 1.15; }
+  .bd-def { margin: 0; font-size: 19px; line-height: 1.4; color: var(--ink-secondary); }
+  .bd-sub { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--border); min-height: 200px; }
+  .bd-sub .k { margin: 0 0 6px; font-size: 15px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold-warm); }
+  .bd-sub .v { margin: 0; font-size: 19px; line-height: 1.42; color: var(--ink); }
+  .bd-sub .v strong { color: var(--navy); }
+  .footnote { margin-top: 26px; font-size: 21px; }
+  .footnote a { color: #6699CC; text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow" data-reveal>What is agency &middot; an example theoretical framework</p>
+    <h1 data-reveal>Agency needs to be defined to the context and <span class="accent">measured as an outcome</span></h1>
+
+    <p class="bd-intro" data-reveal>For example, in <strong>social cognitive theory</strong>, people are agents who intentionally shape their circumstances. Agency has four core elements in this framework:</p>
+
+    <div class="bd-grid">
+      <div class="bd-card hoverable" data-reveal>
+        <div class="bd-head"><span class="num">1</span><p class="t">Intentionality</p></div>
+        <p class="bd-def">Forming plans and committing to act on them.</p>
+        <div class="bd-sub">
+          <p class="k">Sub-construct &middot; goal commitment</p>
+          <p class="v">The learner states a business goal in her own words and <strong>commits to a concrete next step</strong> before the session ends.</p>
+        </div>
+      </div>
+      <div class="bd-card hoverable" data-reveal>
+        <div class="bd-head"><span class="num">2</span><p class="t">Forethought</p></div>
+        <p class="bd-def">Setting goals and anticipating the likely outcomes of actions.</p>
+        <div class="bd-sub">
+          <p class="k">Sub-construct &middot; planning and tradeoffs</p>
+          <p class="v">She <strong>weighs two ideas against each other</strong>, asking what each would cost, earn, and risk in her local market.</p>
+        </div>
+      </div>
+      <div class="bd-card hoverable" data-reveal>
+        <div class="bd-head"><span class="num">3</span><p class="t">Self-reactiveness</p></div>
+        <p class="bd-def">Monitoring progress and adjusting course along the way.</p>
+        <div class="bd-sub">
+          <p class="k">Sub-construct &middot; course correction</p>
+          <p class="v">He returns with progress updates and <strong>revises the plan</strong> when the first supplier falls through, instead of abandoning the goal.</p>
+        </div>
+      </div>
+      <div class="bd-card hoverable" data-reveal>
+        <div class="bd-head"><span class="num">4</span><p class="t">Self-reflectiveness</p></div>
+        <p class="bd-def">Evaluating one's own thinking, capability, and results.</p>
+        <div class="bd-sub">
+          <p class="k">Sub-construct &middot; calibrated self-belief</p>
+          <p class="v">After the pitch she reviews what worked and what did not, and her <strong>stated confidence tracks her real progress</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footnote" data-reveal>
+      <span class="mark"></span>
+      <span><a href="https://pubmed.ncbi.nlm.nih.gov/11148297/" target="_blank" rel="noopener">Bandura (2001), Social cognitive theory: an agentic perspective</a>. This is one lens among several: Sen's capability approach and Jigsaw's five agency types (slide 3) name different sub-constructs. Whatever the framework, pick one whose constructs your product can actually observe.</span>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

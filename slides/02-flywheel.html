@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Agency Flywheel</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .fw-wrap { margin-top: 30px; display: grid; grid-template-columns: 1fr 480px; gap: 44px; flex: 1; min-height: 0; }
+  .fw-diagram { position: relative; }
+  .fw-ring { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .fw-node { position: absolute; width: 340px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: var(--shadow-md); padding: 18px 22px; text-align: center; }
+  .fw-node .t { margin: 0 0 4px; font-size: 25px; font-weight: 800; color: var(--navy); }
+  .fw-node .d { margin: 0 0 8px; font-size: 19px; line-height: 1.3; color: var(--ink-secondary); }
+  .fw-node .ai { margin: 0; font-size: 17px; line-height: 1.3; color: var(--ink); text-align: left;
+    border-top: 1px solid var(--border); padding-top: 8px; display: flex; gap: 8px; align-items: flex-start; }
+  .fw-node .ai .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 3px; }
+  .fw-node .ai strong { color: var(--navy); }
+  .fw-n1 { top: 0; left: 50%; transform: translateX(-50%); }
+  .fw-n2 { top: 50%; right: 0; transform: translateY(-50%); }
+  .fw-n3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .fw-n4 { top: 50%; left: 0; transform: translateY(-50%); }
+  .fw-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+  .fw-center .lab { margin: 0; font-size: 19px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-muted); }
+  .fw-center .big { margin: 2px 0 0; font-size: 27px; font-weight: 800; color: var(--navy); }
+  .fw-side { display: flex; flex-direction: column; gap: 20px; justify-content: flex-start; }
+  .fw-card { background: var(--surface); border: 1px solid var(--border); border-left: 6px solid var(--gold);
+    border-radius: 12px; box-shadow: var(--shadow-md); padding: 22px 26px; }
+  .fw-card.down { border-left-color: #B3361F; }
+  .fw-card .t { margin: 0 0 6px; font-size: 23px; font-weight: 800; color: var(--navy); }
+  .fw-card .d { margin: 0; font-size: 20px; line-height: 1.4; color: var(--ink-secondary); }
+  .fw-panel { background: var(--navy-deep); border-radius: 12px; padding: 22px 26px; }
+  .fw-panel p { margin: 0; font-size: 21px; font-weight: 600; line-height: 1.42; color: var(--white); }
+  .fw-panel p .accent { color: var(--gold); }
+  .fw-legend { margin-top: 4px; display: flex; align-items: center; gap: 10px; font-size: 17px; color: var(--ink-muted); }
+  .fw-legend .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow" data-reveal>Where the Agency Fund starts</p>
+    <h1 data-reveal>Our worldview of agency <span class="accent">in a flywheel</span></h1>
+
+    <div class="fw-wrap">
+      <div class="fw-diagram" data-reveal>
+        <svg class="fw-ring" viewBox="0 0 900 640" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <marker id="fwArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#003366"/>
+            </marker>
+          </defs>
+          <path d="M 570 110 A 270 210 0 0 1 670 320" fill="none" stroke="#003366" stroke-width="5" marker-end="url(#fwArrow)"/>
+          <path d="M 670 400 A 270 210 0 0 1 570 545" fill="none" stroke="#003366" stroke-width="5" marker-end="url(#fwArrow)"/>
+          <path d="M 330 545 A 270 210 0 0 1 230 400" fill="none" stroke="#003366" stroke-width="5" marker-end="url(#fwArrow)"/>
+          <path d="M 230 320 A 270 210 0 0 1 330 110" fill="none" stroke="#003366" stroke-width="5" marker-end="url(#fwArrow)"/>
+        </svg>
+        <div class="fw-node fw-n1">
+          <p class="t">Beliefs and aspirations</p>
+          <p class="d">What feels possible, and for whom</p>
+          <p class="ai"><span class="dot"></span><span><strong>AI:</strong> personalized and timely AI support widens what feels possible</span></p>
+        </div>
+        <div class="fw-node fw-n2">
+          <p class="t">Purposeful action and choices</p>
+          <p class="d">Actions and choices made on the world as they see it</p>
+          <p class="ai"><span class="dot"></span><span><strong>AI:</strong> people purposefully plan, ask, and decide through AI</span></p>
+        </div>
+        <div class="fw-node fw-n3">
+          <p class="t">Real-world outcomes</p>
+          <p class="d">Health, learning, income, etc.</p>
+          <p class="ai"><span class="dot"></span><span><strong>AI:</strong> what people achieve alongside AI results in real changes in their lives</span></p>
+        </div>
+        <div class="fw-node fw-n4">
+          <p class="t">Interpreted experience</p>
+          <p class="d">Success and setback revise the beliefs</p>
+          <p class="ai"><span class="dot"></span><span><strong>AI:</strong> people interpret their achievements and setbacks with AI, as well as process through which results were reached</span></p>
+        </div>
+        <div class="fw-center">
+          <p class="lab">The Agency</p>
+          <p class="big">FLYWHEEL</p>
+        </div>
+      </div>
+
+      <div class="fw-side">
+        <div class="fw-card hoverable" data-reveal>
+          <p class="t">The loop turns both ways</p>
+          <p class="d">When it turns well, capable choices bring results that promote a positive cycle. When it turns badly, failed choices result in a negative cycle.</p>
+        </div>
+        <div class="fw-card down hoverable" data-reveal>
+          <p class="t">AI products sit inside it, at every point</p>
+          <p class="d">An AI tool can push any of the four elements in either direction, while generating lots of digital behavioral traces.</p>
+        </div>
+        <div class="fw-panel" data-reveal>
+          <p>So measuring agency in an AI product means <span class="accent">understanding these digital traces</span>: observing what the loop does wherever the AI meets it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

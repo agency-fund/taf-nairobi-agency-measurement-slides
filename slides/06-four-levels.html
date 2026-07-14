@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The four-level framework</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .fl-flow { margin-top: 70px; display: flex; align-items: stretch; gap: 0; }
+  .fl-card { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow-md); padding: 30px 32px; }
+  .fl-card.hot { border: 3px solid var(--gold); box-shadow: 0 8px 20px hsl(210 50% 20% / 0.14); }
+  .fl-card .lv { margin: 0 0 4px; font-size: 21px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-muted); }
+  .fl-card.hot .lv { color: var(--gold-warm); }
+  .fl-card .t { margin: 0 0 12px; font-size: 29px; font-weight: 800; color: var(--navy); }
+  .fl-card .d { margin: 0; font-size: 22px; line-height: 1.42; color: var(--ink-secondary); }
+  .fl-arrow { align-self: center; width: 42px; flex-shrink: 0; display: flex; justify-content: center; }
+  .fl-arrow svg { width: 30px; height: 30px; }
+  .fl-bridge { margin-top: 56px; background: var(--navy-deep); border-radius: 12px; padding: 34px 42px; }
+  .fl-bridge p { margin: 0; font-size: 27px; font-weight: 600; line-height: 1.48; color: var(--white); }
+  .fl-bridge p .accent { color: var(--gold); }
+  a { color: #6699CC; text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow" data-reveal>The four-level evaluation framework &middot; <a href="https://eval.playbook.org.ai" target="_blank" rel="noopener">eval.playbook.org.ai</a></p>
+    <h1 data-reveal>Agency measurement sits at <span class="accent">Level 3</span></h1>
+
+    <div class="fl-flow">
+      <div class="fl-card" data-reveal>
+        <p class="lv">Level 1</p>
+        <p class="t">Models Evaluation</p>
+        <p class="d">Does the AI system perform as intended?</p>
+      </div>
+      <div class="fl-arrow" data-reveal><svg viewBox="0 0 24 24"><path d="M4 12h14m-5-6 6 6-6 6" fill="none" stroke="#003366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fl-card" data-reveal>
+        <p class="lv">Level 2</p>
+        <p class="t">Product Evaluation</p>
+        <p class="d">Does the overall product engage and retain users?</p>
+      </div>
+      <div class="fl-arrow" data-reveal><svg viewBox="0 0 24 24"><path d="M4 12h14m-5-6 6 6-6 6" fill="none" stroke="#003366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fl-card hot" data-reveal>
+        <p class="lv">Level 3</p>
+        <p class="t">User Evaluation</p>
+        <p class="d">Does the product change users' thoughts, feelings, knowledge and behaviour towards the development outcome?</p>
+      </div>
+      <div class="fl-arrow" data-reveal><svg viewBox="0 0 24 24"><path d="M4 12h14m-5-6 6 6-6 6" fill="none" stroke="#003366" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fl-card" data-reveal>
+        <p class="lv">Level 4</p>
+        <p class="t">Impact Evaluation</p>
+        <p class="d">Do users with access to the product improve development outcomes?</p>
+      </div>
+    </div>
+
+    <div class="fl-bridge" data-reveal>
+      <p>Nobody can run an RCT on every product change. <span class="accent">Validated agency measures at Level 3</span> move when the product changes, and they speak to what Level 4 cares about. That is what lets teams anchor their A/B tests on something that matters.</p>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

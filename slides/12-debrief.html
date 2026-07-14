@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Debrief</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .db-wrap { margin-top: 48px; display: grid; grid-template-columns: 1fr 620px; gap: 56px; flex: 1; min-height: 0; }
+  .db-steps { display: flex; flex-direction: column; gap: 0; }
+  .db-step { display: flex; gap: 28px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--border); }
+  .db-step:last-child { border-bottom: none; }
+  .db-step .num { font-size: 44px; font-weight: 900; color: var(--gold); line-height: 1;
+    flex-shrink: 0; width: 54px; font-variant-numeric: tabular-nums; }
+  .db-step .t { margin: 0 0 6px; font-size: 27px; font-weight: 800; color: var(--navy); line-height: 1.25; }
+  .db-step .d { margin: 0; font-size: 23px; line-height: 1.42; color: var(--ink-secondary); }
+  .db-side { display: flex; flex-direction: column; gap: 22px; justify-content: flex-start; }
+  .db-panel { background: var(--navy-deep); border-radius: 12px; padding: 30px 36px; }
+  .db-panel p { margin: 0; font-size: 24px; font-weight: 600; line-height: 1.5; color: var(--white); }
+  .db-panel p .accent { color: var(--gold); }
+  .db-real { background: var(--surface); border: 1px solid var(--border); border-left: 6px solid var(--gold);
+    border-radius: 12px; box-shadow: var(--shadow-md); padding: 24px 30px; }
+  .db-real .t { margin: 0 0 6px; font-size: 22px; font-weight: 800; color: var(--navy); }
+  .db-real .d { margin: 0; font-size: 21px; line-height: 1.4; color: var(--ink-secondary); }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow" data-reveal>Debrief &middot; live in Calibrate</p>
+    <h1 data-reveal>Now we find out how much we <span class="accent">disagreed</span></h1>
+
+    <div class="db-wrap">
+      <div class="db-steps">
+        <div class="db-step" data-reveal>
+          <span class="num">1</span>
+          <div>
+            <p class="t">Human agreement, per domain</p>
+            <p class="d">We open Calibrate's agreement view together: how often did coders give the same answer to the same question about the same conversation?</p>
+          </div>
+        </div>
+        <div class="db-step" data-reveal>
+          <span class="num">2</span>
+          <div>
+            <p class="t">The LLM judge, same rubric</p>
+            <p class="d">An AI evaluator has already run your exact four questions across all 18 conversations. We compare its verdicts with the room's.</p>
+          </div>
+        </div>
+        <div class="db-step" data-reveal>
+          <span class="num">3</span>
+          <div>
+            <p class="t">The hard cases</p>
+            <p class="d">Two or three tables tell us where they split and what evidence each side used. Those arguments are the raw material for a sharper rubric.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="db-side">
+        <div class="db-panel" data-reveal>
+          <p>The point of the exercise: agency leaves signals in text, and we want to identify them <span class="accent">consistently</span>. Human coders set the standard. Once a rubric survives this contest with human judgment, an LLM can apply it across thousands of conversations. That pairing is what makes agency measurement scale.</p>
+        </div>
+        <div class="db-real hoverable" data-reveal>
+          <p class="t">Calibrate your expectations</p>
+          <p class="d">When trained medical experts coded real conversations in our Noora Health pilot, they agreed with each other less than half the time. Disagreement is normal. It is also the material we work with.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footnote" data-reveal>
+      <span class="mark"></span>
+      <span>This was Step 3 in miniature: humans first, the machine second, and the argument between them is where the measure improves.</span>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>

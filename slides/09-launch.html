@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Workshop launch</title>
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/anim.css">
+<link rel="stylesheet" href="shared/taf.css">
+<style>
+  .lc-eyebrow { color: var(--gold-warm); }
+  .lc-wrap { margin-top: 52px; display: grid; grid-template-columns: 1fr 560px; gap: 64px; flex: 1; }
+  .lc-steps { display: flex; flex-direction: column; justify-content: flex-start; gap: 0; }
+  .lc-step { display: flex; gap: 30px; align-items: flex-start; padding: 26px 0; border-bottom: 1px solid var(--border); }
+  .lc-step:last-child { border-bottom: none; }
+  .lc-step .num { font-size: 46px; font-weight: 900; color: var(--gold); line-height: 1;
+    flex-shrink: 0; font-variant-numeric: tabular-nums; width: 58px; }
+  .lc-step .t { margin: 0 0 6px; font-size: 29px; font-weight: 700; color: var(--navy); line-height: 1.25; }
+  .lc-step .d { margin: 0; font-size: 25px; font-weight: 400; color: var(--ink-secondary); line-height: 1.42; }
+  .lc-side { display: flex; flex-direction: column; justify-content: flex-start; gap: 22px; }
+  .lc-side-label { font-size: 20px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-muted); margin: 0 0 2px; }
+  .lc-domain { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow-md); padding: 24px 30px; display: flex; align-items: center; gap: 24px; }
+  .lc-chip { width: 14px; height: 64px; border-radius: 7px; flex-shrink: 0; }
+  .lc-domain .n { margin: 0 0 4px; font-size: 27px; font-weight: 800; color: var(--navy); }
+  .lc-domain .w { margin: 0; font-size: 22px; font-weight: 400; color: var(--ink-secondary); line-height: 1.35; }
+  .lc-note { background: var(--navy-deep); border-radius: 12px; padding: 26px 30px; margin-top: 8px; }
+  .lc-note p { margin: 0; font-size: 22px; font-weight: 400; line-height: 1.45; color: #C9D4E0; }
+  .lc-note p strong { color: var(--gold); font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <p class="eyebrow lc-eyebrow" data-reveal>Activity &middot; About 40 minutes</p>
+    <h1 data-reveal>Your turn: code conversations like a <span class="accent">measurement team</span></h1>
+
+    <div class="lc-wrap">
+      <div class="lc-steps">
+        <div class="lc-step" data-reveal>
+          <span class="num">1</span>
+          <div><p class="t">Pick one card from a domain pile</p>
+          <p class="d">Education, health, or agriculture: choose the world closest to your work. The card's QR code is your personal labeller link.</p></div>
+        </div>
+        <div class="lc-step" data-reveal>
+          <span class="num">2</span>
+          <div><p class="t">Open the link on your phone or laptop</p>
+          <p class="d">You will see six conversations between users and a fictional AI product, plus the four coding questions.</p></div>
+        </div>
+        <div class="lc-step" data-reveal>
+          <span class="num">3</span>
+          <div><p class="t">Code alone, top to bottom, about 20 minutes</p>
+          <p class="d">Answer the four questions for each conversation and leave one open note. Three or four conversations is a good pace; nobody needs to finish six.</p></div>
+        </div>
+        <div class="lc-step" data-reveal>
+          <span class="num">4</span>
+          <div><p class="t">Then compare labels at your table, about 15 minutes</p>
+          <p class="d">Find one conversation where you disagreed. Argue it out: what evidence did each of you use? Nominate your hardest case for the debrief.</p></div>
+        </div>
+      </div>
+
+      <div class="lc-side">
+        <p class="lc-side-label" data-reveal>Three archetypes, all fictional</p>
+        <div class="lc-domain hoverable" data-reveal>
+          <span class="lc-chip" style="background: var(--gold);"></span>
+          <div><p class="n">AI educational mentor</p><p class="w">Study and career support for secondary students</p></div>
+        </div>
+        <div class="lc-domain hoverable" data-reveal>
+          <span class="lc-chip" style="background: var(--navy);"></span>
+          <div><p class="n">AI health assistant</p><p class="w">Maternal and newborn health support</p></div>
+        </div>
+        <div class="lc-domain hoverable" data-reveal>
+          <span class="lc-chip" style="background: var(--slate-blue);"></span>
+          <div><p class="n">AI agricultural advisor</p><p class="w">Advisory support for smallholder farmers</p></div>
+        </div>
+        <div class="lc-note" data-reveal>
+          <p><strong>All synthetic.</strong> The products are fictional and every conversation was written for this exercise. No real user data, no real organization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="shared/anim.js"></script>
+<script>
+/* Deck-shell integration. Keep verbatim. */
+(function () {
+  if (window.parent === window) return;
+  document.addEventListener('keydown', function (e) {
+    var nav = ['ArrowRight', 'ArrowLeft', ' ', 'PageDown', 'PageUp', 'Home', 'End', 'Escape'];
+    if (nav.indexOf(e.key) !== -1 || /^[1-9]$/.test(e.key) || e.key === 'p' || e.key === 'P') {
+      e.preventDefault();
+      window.parent.postMessage({ deckKey: e.key }, '*');
+    }
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { window.parent.postMessage({ deckFontsReady: true }, '*'); });
+  } else { window.parent.postMessage({ deckFontsReady: true }, '*'); }
+})();
+</script>
+</body>
+</html>
