@@ -5,6 +5,9 @@ Participants code synthetic AI-assistant conversations for agency signals in Cal
 then compare their labels against each other and against an LLM judge running the
 same rubric.
 
+**Live deck:** <https://agency-fund.github.io/taf-nairobi-agency-measurement-slides/>
+(deployed from `main` by `.github/workflows/pages.yml`)
+
 ## Contents
 
 | Path | What |
