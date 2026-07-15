@@ -227,7 +227,7 @@
 
   function setMode(mode) {
     document.body.setAttribute('data-mode', mode);
-    if (mode === 'present') { fit(); show(current); }
+    if (mode === 'present') { fit(); show(current); frame.focus(); }
     else { requestAnimationFrame(buildOverview); }
   }
 
@@ -353,6 +353,9 @@
   //  - deckKey: navigation keys pressed while focus is inside the slide iframe
   const unveil = () => {
     frame.classList.remove('loading');
+    // keep keyboard focus inside the slide so slides with staged reveals (e.g. 02)
+    // see arrow keys first and can forward the rest to the shell
+    if (document.body.getAttribute('data-mode') === 'present') frame.focus();
     // drop the direction class after the transition so it never lingers
     setTimeout(() => frame.classList.remove('enter-next', 'enter-prev', 'enter-jump'), 350);
   };
@@ -392,8 +395,8 @@
       default: if (e.key >= '1' && e.key <= '9') { const i = parseInt(e.key, 10) - 1; if (i < deck.length) { e.preventDefault(); show(i); } }
     }
   });
-  document.getElementById('navL').addEventListener('click', prev);
-  document.getElementById('navR').addEventListener('click', next);
+  document.getElementById('navL').addEventListener('click', () => { prev(); frame.focus(); });
+  document.getElementById('navR').addEventListener('click', () => { next(); frame.focus(); });
   document.getElementById('startBtn').addEventListener('click', () => setMode('present'));
   document.getElementById('overviewBtn').addEventListener('click', () => setMode('overview'));
   let rT;

@@ -7,40 +7,69 @@
 <link rel="stylesheet" href="shared/anim.css">
 <link rel="stylesheet" href="shared/taf.css">
 <style>
-  .ts-steps { margin-top: 46px; flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 0; max-width: 1600px; }
-  .ts-step { display: flex; gap: 40px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
-  .ts-step:last-child { border-bottom: none; }
-  .ts-step .num { font-size: 60px; font-weight: 900; color: var(--gold); line-height: 1;
-    flex-shrink: 0; width: 72px; font-variant-numeric: tabular-nums; }
-  .ts-step .t { margin: 0 0 8px; font-size: 32px; font-weight: 800; color: var(--navy); line-height: 1.2; }
-  .ts-step .d { margin: 0; font-size: 24px; font-weight: 400; color: var(--ink-secondary); line-height: 1.45; max-width: 1400px; }
-  .ts-step .d strong { color: var(--navy); }
+  .ts-flow { margin-top: 56px; display: grid; grid-template-columns: 1fr 64px 1fr 64px 1fr;
+    gap: 0; align-items: stretch; }
+  .ts-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow-md); padding: 32px 34px; display: flex; flex-direction: column; gap: 16px; }
+  .ts-top { display: flex; align-items: center; justify-content: space-between; }
+  .ts-top .num { font-size: 64px; font-weight: 900; color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+  .ts-card .t { margin: 4px 0 0; font-size: 29px; font-weight: 800; color: var(--navy); line-height: 1.22; }
+  .ts-card .d { margin: 0; font-size: 20px; line-height: 1.45; color: var(--ink-secondary); }
+  .ts-card .d strong { color: var(--navy); }
+  .ts-arrow { display: flex; align-items: center; justify-content: center; }
+  .ts-arrow svg { width: 40px; height: 40px; stroke: var(--gold); fill: none;
+    stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+  .ts-loop { position: relative; margin-top: 26px; flex: 1; min-height: 0; }
+  .ts-loop svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .ts-loop-label { position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%);
+    background: var(--navy-deep); color: var(--white); border-radius: 9999px; padding: 14px 34px;
+    font-size: 20px; font-weight: 600; line-height: 1.3; white-space: nowrap; }
+  .ts-loop-label .accent { color: var(--gold); font-weight: 800; }
 </style>
 </head>
 <body>
   <div class="slide">
-    <p class="eyebrow" data-reveal>How we suggest you do it</p>
+    <p class="eyebrow" data-reveal>How we suggest you do it &middot; three steps that loop</p>
     <h1 data-reveal>Teams should specify what agency means for <span class="accent">their specific users and contexts</span></h1>
 
-    <div class="ts-steps">
-      <div class="ts-step" data-reveal>
-        <span class="num">1</span>
-        <div>
-          <p class="t">Define agency for your local problem</p>
+    <div class="ts-flow">
+      <div class="ts-card" data-reveal>
+        <div class="ts-top">
+          <span class="num">1</span>
         </div>
+        <p class="t">Define agency for your local problem</p>
+        <p class="d">What kind of agency is the tool supposed to support? <strong>For whom? To what end?</strong> Anchor the definition in your program's theory of change.</p>
       </div>
-      <div class="ts-step" data-reveal>
-        <span class="num">2</span>
-        <div>
-          <p class="t">Measure with the right tools, on the right data, at the right moment</p>
+      <div class="ts-arrow" data-reveal><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg></div>
+      <div class="ts-card" data-reveal>
+        <div class="ts-top">
+          <span class="num">2</span>
         </div>
+        <p class="t">Measure with the right tools, on the right data, at the right moment</p>
+        <p class="d">Combine <strong>on-platform</strong> signals, such as in-app surveys and digital traces, with <strong>off-platform</strong> surveys, interviews, observations, and records.</p>
       </div>
-      <div class="ts-step" data-reveal>
-        <span class="num">3</span>
-        <div>
-          <p class="t">Test and validate your measurement tools iteratively</p>
+      <div class="ts-arrow" data-reveal><svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg></div>
+      <div class="ts-card" data-reveal>
+        <div class="ts-top">
+          <span class="num">3</span>
         </div>
+        <p class="t">Test and validate your measurement tools iteratively</p>
+        <p class="d">Check <strong>reliability and validity</strong> for your context, and compare LLM-based measures against a human-coded gold standard.</p>
       </div>
+    </div>
+
+    <div class="ts-loop" data-reveal>
+      <svg viewBox="0 0 1680 170" preserveAspectRatio="none">
+        <defs>
+          <marker id="tsLoopArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#003366"/>
+          </marker>
+        </defs>
+        <path d="M 1480 14 C 1480 110, 1120 128, 840 128 C 560 128, 200 110, 200 34"
+          fill="none" stroke="#003366" stroke-width="4" stroke-dasharray="12 12" opacity="0.55"
+          marker-end="url(#tsLoopArrow)"/>
+      </svg>
+      <div class="ts-loop-label"><span class="accent">Iterate:</span> agency shifts across time and settings, so keep refining how you define and measure it</div>
     </div>
 
   </div>

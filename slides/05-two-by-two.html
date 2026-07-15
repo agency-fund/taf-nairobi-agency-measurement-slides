@@ -9,13 +9,16 @@
 <style>
   h1 { font-size: 52px; }
   .tb-grid { margin-top: 22px; flex: 1; min-height: 0; display: grid;
-    grid-template-columns: 230px minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: 88px minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+    grid-template-columns: 280px minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 128px minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
   .tb-axis { display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; min-height: 0; }
-  .tb-axis .a { font-size: 21px; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.2; }
-  .tb-axis .s { font-size: 15px; color: var(--ink-muted); margin: 4px 0 0; line-height: 1.3; max-width: 560px; }
+  .tb-axis .a { font-size: 28px; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.18; }
+  .tb-axis .a::after { content: ''; display: block; width: 56px; height: 5px; border-radius: 3px;
+    background: var(--gold); margin: 8px auto 0; }
+  .tb-axis .s { font-size: 19px; color: var(--ink-secondary); margin: 8px 0 0; line-height: 1.32; max-width: 660px; }
   .tb-axis.row { align-items: flex-start; text-align: left; padding-top: 20px; justify-content: flex-start; }
+  .tb-axis.row .a::after { margin: 8px 0 0; }
   .tb-cell { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
     box-shadow: var(--shadow-md); padding: 18px 24px; overflow: hidden; min-height: 0; }
   .tb-block { margin: 0; display: flex; gap: 14px; align-items: flex-start; padding: 6px 0; }
@@ -26,12 +29,10 @@
     stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .tb-icon.off { background: var(--surface); border: 2px solid var(--navy); }
   .tb-icon.off svg { stroke: var(--navy); }
-  .tb-block .k { margin: 0 0 3px; font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
+  .tb-block .k { margin: 0 0 4px; font-size: 15px; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--gold-warm); }
-  .tb-block .v { margin: 0; font-size: 17px; line-height: 1.32; color: var(--ink); }
-  .tb-foot { margin-top: 20px; display: flex; align-items: flex-start; gap: 20px;
-    font-size: 22px; line-height: 1.4; color: var(--ink-secondary); }
-  .tb-foot .mark { width: 6px; align-self: stretch; background: var(--gold); border-radius: 3px; flex-shrink: 0; }
+  .tb-block .v { margin: 0; font-size: 16px; line-height: 1.36; color: var(--ink); }
+  .tb-block .v strong { color: var(--navy); }
 </style>
 </head>
 <body>
@@ -58,15 +59,15 @@
         <div class="tb-block">
           <span class="tb-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/><path d="M9 13.5l2 2 4-4.5"/></svg></span>
           <div class="tb-tx">
-            <p class="k">On-platform &middot; in-app micro-survey</p>
-            <p class="v">Short in-app surveys probing self-efficacy or perceived control over the ultimate goal: how confident is the user about developing a successful business idea?</p>
+            <p class="k">On-platform data &middot; in-app micro-survey</p>
+            <p class="v">Short in-app surveys probing users' general sense of self-efficacy or perceived control over their ultimate goal over time (e.g., How confident is the user about developing a successful business idea? How much control do they feel over reaching their ultimate goal?)</p>
           </div>
         </div>
         <div class="tb-block">
           <span class="tb-icon off"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
           <div class="tb-tx">
-            <p class="k">Off-platform &middot; phone or in-person survey</p>
-            <p class="v">Longer surveys using validated agency measures, probing the same constructs systematically over time.</p>
+            <p class="k">Off-platform data &middot; phone or in-person survey</p>
+            <p class="v">Longer phone/in-person surveys using validated agency measures that <strong>systematically</strong> probe users' general sense of self-efficacy or perceived control over their ultimate goal over time.</p>
           </div>
         </div>
       </div>
@@ -74,15 +75,15 @@
         <div class="tb-block">
           <span class="tb-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/><path d="M9 13.5l2 2 4-4.5"/></svg></span>
           <div class="tb-tx">
-            <p class="k">On-platform &middot; in-app micro-survey</p>
-            <p class="v">Short in-app surveys on whether users felt able to understand, question, or adopt the AI mentor's advice.</p>
+            <p class="k">On-platform data &middot; in-app micro-survey</p>
+            <p class="v">Short in-app surveys probing whether users felt able to understand, question, or adopt an AI mentor's advice.</p>
           </div>
         </div>
         <div class="tb-block">
           <span class="tb-icon off"><svg viewBox="0 0 24 24"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2.6"/><line x1="4" y1="16" x2="20" y2="16"/><circle cx="15" cy="16" r="2.6"/></svg></span>
           <div class="tb-tx">
-            <p class="k">Off-platform &middot; validated scales</p>
-            <p class="v">Validated measures of trust in AI and of perceived dependence versus empowerment when using the tool.</p>
+            <p class="k">Off-platform data &middot; validated scales</p>
+            <p class="v">Longer phone/in-person surveys using validated agency measures that systematically probe users' trust in AI and perceived dependence versus empowerment when using a tool.</p>
           </div>
         </div>
       </div>
@@ -95,15 +96,15 @@
         <div class="tb-block">
           <span class="tb-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><line x1="8.5" y1="11.5" x2="8.51" y2="11.5"/><line x1="12" y1="11.5" x2="12.01" y2="11.5"/><line x1="15.5" y1="11.5" x2="15.51" y2="11.5"/></svg></span>
           <div class="tb-tx">
-            <p class="k">On-platform &middot; conversation logs</p>
-            <p class="v">Longitudinal signals of agency in conversation logs, especially setting and navigating longer-term goals, or resilience despite difficulties.</p>
+            <p class="k">On-platform data &middot; conversation logs</p>
+            <p class="v">Longitudinal user signals of agency in AI conversation logs, especially those related to setting and navigating longer-term goals or demonstrating resilience despite difficulties.</p>
           </div>
         </div>
         <div class="tb-block">
           <span class="tb-icon off"><svg viewBox="0 0 24 24"><polygon points="12 2.5 14.9 8.4 21.5 9.4 16.7 14 17.9 20.5 12 17.4 6.1 20.5 7.3 14 2.5 9.4 9.1 8.4 12 2.5"/></svg></span>
           <div class="tb-tx">
-            <p class="k">Off-platform &middot; rubric-rated pitches</p>
-            <p class="v">Surveys tracking how business ideas develop; rubric-rated observations of ideas and pitches, ideally linked to outcomes like earnings.</p>
+            <p class="k">Off-platform data &middot; rubric-rated pitches</p>
+            <p class="v">Longer phone/in-person surveys tracking how users develop their business ideas; rubric-rated observations of ideas and pitches; or classroom observation of teamwork, ideally linked to downstream outcomes like business earnings.</p>
           </div>
         </div>
       </div>
@@ -111,15 +112,15 @@
         <div class="tb-block">
           <span class="tb-icon"><svg viewBox="0 0 24 24"><polyline points="3 12 7.5 12 10.5 5.5 13.5 18.5 16.5 12 21 12"/></svg></span>
           <div class="tb-tx">
-            <p class="k">On-platform &middot; digital traces</p>
-            <p class="v">Interaction patterns and conversation logs showing whether users understand, question, or adopt the mentor's advice.</p>
+            <p class="k">On-platform data &middot; digital traces</p>
+            <p class="v">Digital traces (e.g., interaction patterns or conversation logs) showing whether users understand, question, or adopt an AI mentor's advice.</p>
           </div>
         </div>
         <div class="tb-block">
           <span class="tb-icon off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg></span>
           <div class="tb-tx">
-            <p class="k">Off-platform &middot; observation and interviews</p>
-            <p class="v">Observation or interview data, such as usability studies, on how the tool gets used in practice.</p>
+            <p class="k">Off-platform data &middot; observation and interviews</p>
+            <p class="v">Observation or interview data (e.g., usability studies) on tool usage for developing business ideas.</p>
           </div>
         </div>
       </div>

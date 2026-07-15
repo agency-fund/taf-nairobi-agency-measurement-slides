@@ -8,8 +8,22 @@
 <link rel="stylesheet" href="shared/taf.css">
 <style>
   .bw-grid { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; flex: 1; min-height: 0; }
-  .bw-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    box-shadow: var(--shadow-md); padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+  /* Flip cards */
+  .flip { position: relative; perspective: 1800px; cursor: pointer; min-height: 0; }
+  .flip-inner { position: absolute; inset: 0; transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .flip.flipped .flip-inner { transform: rotateY(180deg); }
+  .flip:hover .flip-inner { transform: translateY(-4px); }
+  .flip.flipped:hover .flip-inner { transform: rotateY(180deg) translateY(-4px); }
+  .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-md);
+    padding: 26px 30px 46px; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
+  .face.back { transform: rotateY(180deg); }
+  .flip-hint { position: absolute; right: 22px; bottom: 16px; display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+  .flip-hint svg { width: 16px; height: 16px; stroke: var(--gold-warm); fill: none;
+    stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  /* Card content */
   .bw-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
   .bw-chip { font-size: 16px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
     border-radius: 6px; padding: 5px 13px; flex-shrink: 0; }
@@ -17,11 +31,12 @@
   .bw-chip.down { background: #B3361F; color: var(--white); }
   .bw-src { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: 0.06em;
     text-transform: uppercase; color: var(--ink-muted); }
-  .bw-find { margin: 0; font-size: 20px; line-height: 1.44; color: var(--ink); }
+  .bw-lead { margin: 6px 0 0; font-size: 28px; font-weight: 800; line-height: 1.28; color: var(--navy); }
+  .bw-find { margin: 0; font-size: 21px; line-height: 1.46; color: var(--ink); }
   .bw-find strong { color: var(--navy); }
   .bw-nums { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border);
     display: flex; gap: 34px; }
-  .bw-num .n { margin: 0; font-size: 48px; font-weight: 900; line-height: 1.05;
+  .bw-num .n { margin: 0; font-size: 52px; font-weight: 900; line-height: 1.05;
     font-variant-numeric: tabular-nums; color: var(--navy); }
   .bw-num .n.bad { color: #B3361F; }
   .bw-num .l { margin: 4px 0 0; font-size: 17px; line-height: 1.3; color: var(--ink-secondary); }
@@ -30,6 +45,7 @@
   .bw-panel p .accent { color: var(--gold); }
   .footnote { margin-top: 22px; font-size: 20px; }
   .footnote a { color: #6699CC; text-decoration: underline; text-underline-offset: 3px; }
+  @media print { .flip.flipped .flip-inner { transform: none; } }
 </style>
 </head>
 <body>
@@ -38,39 +54,78 @@
     <h1 data-reveal>AI can <span class="accent">expand</span> agency, and it can hamper it</h1>
 
     <div class="bw-grid">
-      <div class="bw-card hoverable" data-reveal>
-        <div class="bw-head">
-          <span class="bw-chip up">Can expand</span>
-          <p class="bw-src">Jigsaw at Google &middot; ethnography</p>
-        </div>
-        <p class="bw-find"><strong>Feelings of agency, rather than task completion, drive AI use:</strong> people stay with tools that make them feel more capable, even when the tools make mistakes. AI can strengthen agency in five ways: instrumental, cognitive, affective, relational, and structural.</p>
-        <div class="bw-nums">
-          <div class="bw-num"><p class="n">60</p><p class="l">advanced AI users interviewed</p></div>
-          <div class="bw-num"><p class="n">3</p><p class="l">countries: US, Singapore, Germany</p></div>
+      <div class="flip" data-reveal>
+        <div class="flip-inner">
+          <div class="face front">
+            <div class="bw-head">
+              <span class="bw-chip up">Can expand</span>
+              <p class="bw-src">Jigsaw at Google &middot; ethnography</p>
+            </div>
+            <p class="bw-lead">Feelings of agency, rather than task completion, drive AI use.</p>
+            <div class="bw-nums">
+              <div class="bw-num"><p class="n">60</p><p class="l">advanced AI users interviewed</p></div>
+              <div class="bw-num"><p class="n">3</p><p class="l">countries: US, Singapore, Germany</p></div>
+            </div>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip to see details</div>
+          </div>
+          <div class="face back">
+            <div class="bw-head">
+              <span class="bw-chip up">Can expand</span>
+              <p class="bw-src">The full finding</p>
+            </div>
+            <p class="bw-find">People stay with tools that <strong>make them feel more capable</strong>, even when the tools make mistakes. AI can strengthen agency in five ways: instrumental, cognitive, affective, relational, and structural.</p>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip back</div>
+          </div>
         </div>
       </div>
 
-      <div class="bw-card hoverable" data-reveal>
-        <div class="bw-head">
-          <span class="bw-chip down">Can hamper</span>
-          <p class="bw-src">Bastani et al. &middot; PNAS field RCT</p>
-        </div>
-        <p class="bw-find"><strong>Answers on demand became a crutch:</strong> among nearly 1,000 high school students, a ChatGPT-style math tutor boosted practice scores by 48%, but students scored 17% below the control group once the AI was removed. A guardrailed tutor that offered hints rather than solutions eliminated the harm, yet students using either tool remained unaware of the gap between feeling supported and actually learning.</p>
-        <div class="bw-nums">
-          <div class="bw-num"><p class="n">+48%</p><p class="l">practice scores, AI in hand</p></div>
-          <div class="bw-num"><p class="n bad">&minus;17%</p><p class="l">exam scores, AI removed</p></div>
+      <div class="flip" data-reveal>
+        <div class="flip-inner">
+          <div class="face front">
+            <div class="bw-head">
+              <span class="bw-chip down">Can hamper</span>
+              <p class="bw-src">Bastani et al. &middot; PNAS field RCT</p>
+            </div>
+            <p class="bw-lead">Answers on demand became a crutch for nearly 1,000 students.</p>
+            <div class="bw-nums">
+              <div class="bw-num"><p class="n">+48%</p><p class="l">practice scores, AI in hand</p></div>
+              <div class="bw-num"><p class="n bad">&minus;17%</p><p class="l">exam scores, AI removed</p></div>
+            </div>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip to see details</div>
+          </div>
+          <div class="face back">
+            <div class="bw-head">
+              <span class="bw-chip down">Can hamper</span>
+              <p class="bw-src">The full finding</p>
+            </div>
+            <p class="bw-find">A ChatGPT-style math tutor boosted practice scores by 48%, but students scored <strong>17% below the control group</strong> once the AI was removed. A guardrailed tutor that offered hints rather than solutions eliminated the harm, yet students using either tool remained unaware of the gap between feeling supported and actually learning.</p>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip back</div>
+          </div>
         </div>
       </div>
 
-      <div class="bw-card hoverable" data-reveal>
-        <div class="bw-head">
-          <span class="bw-chip down">Can hamper</span>
-          <p class="bw-src">Shaw and Nave &middot; 3 experiments</p>
-        </div>
-        <p class="bw-find"><strong>Cognitive surrender:</strong> across 1,372 participants, access to an accurate chatbot raised reasoning accuracy by 25 percentage points, but a faulty one drove it 15 points below unaided performance. People followed wrong AI advice on roughly four in five consulted trials and became more confident even when misled; time pressure, incentives, and feedback reduced but did not eliminate the effect.</p>
-        <div class="bw-nums">
-          <div class="bw-num"><p class="n">+25 pts</p><p class="l">accuracy when the AI was right</p></div>
-          <div class="bw-num"><p class="n bad">&minus;15 pts</p><p class="l">when it was wrong, vs brain-only</p></div>
+      <div class="flip" data-reveal>
+        <div class="flip-inner">
+          <div class="face front">
+            <div class="bw-head">
+              <span class="bw-chip down">Can hamper</span>
+              <p class="bw-src">Shaw and Nave &middot; 3 experiments</p>
+            </div>
+            <p class="bw-lead">Cognitive surrender: people followed wrong AI advice, confidently.</p>
+            <div class="bw-nums">
+              <div class="bw-num"><p class="n">+25 pts</p><p class="l">accuracy when the AI was right</p></div>
+              <div class="bw-num"><p class="n bad">&minus;15 pts</p><p class="l">when it was wrong, vs brain-only</p></div>
+            </div>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip to see details</div>
+          </div>
+          <div class="face back">
+            <div class="bw-head">
+              <span class="bw-chip down">Can hamper</span>
+              <p class="bw-src">The full finding</p>
+            </div>
+            <p class="bw-find">Across 1,372 participants, an accurate chatbot raised reasoning accuracy by 25 percentage points, but a faulty one drove it 15 points below unaided performance. People followed wrong AI advice on <strong>roughly four in five consulted trials</strong> and became more confident even when misled; time pressure, incentives, and feedback reduced but did not eliminate the effect.</p>
+            <div class="flip-hint"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>Flip back</div>
+          </div>
         </div>
       </div>
     </div>
@@ -85,6 +140,17 @@
     </div>
   </div>
 <script src="shared/anim.js"></script>
+<script>
+/* Flip-card toggles. Click a card to flip between the headline and the full finding. */
+(function () {
+  var flips = document.querySelectorAll('.flip');
+  for (var i = 0; i < flips.length; i++) {
+    (function (card) {
+      card.addEventListener('click', function () { card.classList.toggle('flipped'); });
+    })(flips[i]);
+  }
+})();
+</script>
 <script>
 /* Deck-shell integration. Keep verbatim. */
 (function () {
