@@ -1,3 +1,4 @@
 node_modules/
 _verify/
 .DS_Store
+.env

@@ -39,7 +39,7 @@
   <tr><td class="t">0:04-0:09</td><td>Gain and loss examples (slides 3-4)</td><td>Personal, proxy, collective. Land the closer: every user on the losses slide looks like a dashboard success.</td></tr>
   <tr><td class="t">0:09-0:19</td><td>Definitions, 2x2, four levels, three steps, scope caveat (slides 5-9)</td><td>Roughly 2 min per slide. Slide 9 manages expectations: transcripts are one way in, not the toolbox.</td></tr>
   <tr><td class="t">0:19-0:23</td><td>Launch (slides 10-11)</td><td>Card piles out BEFORE the session. One card per person. Pairs OK for phone-less people.</td></tr>
-  <tr><td class="t">0:23-0:35</td><td>Individual coding (slide 12 stays up)</td><td>Circulate. Nudge people past item 1 by minute 5. "Mixed + a note beats a confident guess."</td></tr>
+  <tr><td class="t">0:23-0:35</td><td>Individual coding (slide 12 stays up)</td><td>Circulate. Nudge people past item 1 by minute 5. "Pick Yes or No and write one line of reasoning — your hesitation is the data."</td></tr>
   <tr><td class="t">0:35-0:42</td><td>Table adjudication</td><td>Prompt: find one conversation where you split, argue the evidence, nominate the hardest case.</td></tr>
   <tr><td class="t">0:42-0:51</td><td>Debrief (slide 13 + live Calibrate)</td><td>Agreement view per domain, then the pre-run LLM judge. 2-3 tables share their hard case. Land the scaling point: validated rubric + LLM = consistent measurement at scale.</td></tr>
   <tr><td class="t">0:51-0:58</td><td>Close (slide 14)</td><td>Message: interesting, necessary, complex, start anyway. Point at the four take-home tools.</td></tr>
@@ -50,10 +50,10 @@
 <div>
 <h2>Calibrate setup (before the day)</h2>
 <ul>
-  <li>Create <strong>3 annotation tasks</strong>, one per domain, from <code>workshop-data/*.csv</code> (6 conversations each, keep upload order: it is the intended coding order).</li>
-  <li>Configure <strong>4 evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (Bandura processes Q1-Q3, modes-of-agency Q4). Answer options: <strong>Yes / No / Mixed</strong>, reasoning optional.</li>
+  <li>Create <strong>3 annotation tasks</strong>, one per domain, from <code>workshop-data/*.csv</code> (10 conversations each, keep upload order: it is the intended coding order, and lengths vary on purpose — power users to two-line drive-bys).</li>
+  <li>Configure <strong>4 binary evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (the flywheel, one question per node: belief shift / specific action / life-outcome link / uses past experience). Answer options: <strong>Yes / No</strong> only — binary on purpose, borderline cases force a choice and that is the disagreement fuel. Reasoning optional.</li>
   <li>Generate <strong>~20 labeller links per task</strong>, paste into <code>qr-cards-template.html</code>, print, cut, stack by color.</li>
-  <li><strong>Pre-run the LLM evaluator</strong> on all 18 items with the same four questions. The debrief reveal must not depend on a live API call.</li>
+  <li><strong>Pre-run the LLM evaluator</strong> on all 30 items with the same four questions. The debrief reveal must not depend on a live API call.</li>
   <li>Open a labeller link <strong>on your own phone</strong>: confirm the labeling UI is usable on mobile.</li>
   <li>Dry-run the full loop with 2-3 colleagues: code, adjudicate, read the agreement view. Time it.</li>
 </ul>
@@ -69,7 +69,7 @@
 <div>
 <h2>Contingencies</h2>
 <div class="warn">
-  <strong>Wifi dies:</strong> print the 18 transcripts beforehand (one set per table). Coding happens on paper against slide 12; adjudication and debrief proceed; slide 13 walks the same three beats without live numbers, and the Noora Health experience carries the calibration point.
+  <strong>Wifi dies:</strong> print the transcripts beforehand (one set per table; items 01-06 of each domain suffice on paper). Coding happens on paper against slide 12; adjudication and debrief proceed; slide 13 walks the same three beats without live numbers, and the Noora Health experience carries the calibration point.
 </div>
 <ul>
   <li><strong>Turnout much smaller than expected:</strong> drop to two domains (education + whichever fits the room); merge tables to 4+ coders each so agreement stats still mean something.</li>
@@ -80,8 +80,8 @@
 
 <h2>Debrief ammunition</h2>
 <div class="gold">
-  <strong>Flagship disagreement items:</strong> EDU-03 (is an adopted goal her own?), HEA-03 (yielded to mother-in-law, and mobilizing her husband is proxy and collective agency in one turn), AGR-03 (bought seed, stalled planting). <strong>The Q3 nuance:</strong> EDU-02 and AGR-02 say they feel great while refusing to reflect; EDU-04 and HEA-02 reflect honestly with low confidence. Reflectiveness and confidence are different constructs.<br><br>
-  <strong>AGR-04 provocation if discussion stalls:</strong> Peter passively follows good advice in a crisis. Is low measured agency a problem here at all, or exactly what a good tool should produce in an emergency?
+  <strong>Flagship disagreement items:</strong> HEA-03 Q4 is the centerpiece trap — "I stopped the syrup early and nothing happened" codes <em>Yes</em> on uses-past-experience AND contradicts clinical guidance: the flywheel turning is not the same as turning <em>well</em>. AGR-02 is the rubric-limits lesson — by the letter, the most dependent farmer scores Yes on Q2 and Q4; binary labels can't see ownership, only the open note can. <strong>The maybe-rule trio</strong> EDU-07 / HEA-07 / AGR-07: real belief shift (Q1 Yes), but "maybe i try" never codes Yes on Q2. <strong>The direction nuance:</strong> EDU-09 / HEA-09 / AGR-09 are negative loops — lost hope still codes Yes on Q1. <strong>The all-No trio:</strong> EDU-08 / HEA-08 / AGR-08 are drive-bys; all-No is correct, and anyone who finds agency there is the calibration conversation. <strong>The vicarious-experience pair</strong> HEA-05 / AGR-05: does someone ELSE's past (a brother's amputation, a neighbour's inspection pass) count as "past experience"? The rubric is silent — let tables fight it out.<br><br>
+  <strong>AGR-05 provocation if discussion stalls:</strong> Esther refuses to adapt anything in a contract year — "i am not experimenting in a contract year." Is deference under high stakes low agency, or exactly the rational move?
 </div>
 </div>
 </div>

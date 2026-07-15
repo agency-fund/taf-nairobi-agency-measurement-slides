@@ -1,0 +1,110 @@
+{
+  "api_base": "https://calibrate-backend.learning.org.ai",
+  "evaluators": {
+    "Q1: Belief or aspiration shift": "183368fe-798e-4b0b-b2c1-699c262cc67d",
+    "Q2: Specific action or decision": "b4eb74e6-94e9-4621-bc27-3ba6085bfa0d",
+    "Q3: Links action to a life outcome": "a86523be-4e3c-4b5d-8669-b8965344a460",
+    "Q4: Uses past experience": "6a99483b-49aa-49b4-af77-f61a1742a40e"
+  },
+  "tasks": {
+    "Education AI Mentor \u2014 Agency Coding": {
+      "uuid": "8c319432-8eb4-4676-8125-2705d89ff38f",
+      "item_ids": [
+        "9d6ca732-d06a-45ac-94cc-52f34d0424fd",
+        "571a0daa-4f44-4018-93f1-8977fd13f320",
+        "9c053879-f311-44f4-8a16-1970d3f1772b",
+        "c4f59f0c-339c-4c0c-9416-6c353de100d4",
+        "4c5986ef-6701-458b-b79a-6d175f09d48f",
+        "c264c465-a329-4da4-93d8-cd84404b3616",
+        "044fb732-4711-4402-a3fd-03f570c46b64",
+        "4a8f34e5-6231-4f02-916f-ba31891930dd",
+        "b86eb914-66a1-4441-9184-3a378d30980d",
+        "f2cf7439-0d84-452c-acb9-42c1c909b9a4"
+      ],
+      "item_names": [
+        "EDU-10 - Nancy reports the wholesale negotiation",
+        "EDU-09 - Collins after the market day flop",
+        "EDU-08 - Canvas deadline",
+        "EDU-07 - Faith discovers maths help can be a business",
+        "EDU-06 - Dennis's team pivots around the boarding school rules",
+        "EDU-05 - Amina wants the script for her braiding business",
+        "EDU-04 - Flour for 100 mandazi",
+        "EDU-03 - Brian's team weighs popcorn against smokies",
+        "EDU-02 - Kevin asks the mentor to fill his canvas",
+        "EDU-01 - Cynthia submits her market day update"
+      ],
+      "evaluators": [
+        "Q1: Belief or aspiration shift",
+        "Q2: Specific action or decision",
+        "Q3: Links action to a life outcome",
+        "Q4: Uses past experience"
+      ]
+    },
+    "Health AI Assistant \u2014 Agency Coding": {
+      "uuid": "834b9a8f-d949-4e35-80c5-83602b8a95ef",
+      "item_ids": [
+        "d14fb494-e237-4ab0-8905-8335b73553f4",
+        "76c88dd5-3738-4f23-8c10-009638ea7e8f",
+        "09c058df-d030-461f-bf25-39b3a0139f3c",
+        "2aeb9647-b953-4699-9d83-021376726361",
+        "2966cee1-3038-4576-8d4d-9cff3a157103",
+        "c872ad53-aacf-4ac5-a0d4-12c814013939",
+        "ce2b9057-cd7c-4d3c-8aba-299e8d64efa8",
+        "911dc61a-18e6-4529-b0fb-f3242179b450",
+        "a543a296-cf00-469b-9dea-73d61fb2e923",
+        "0a737901-c052-412d-8e02-3ed7d4fba5a4"
+      ],
+      "item_names": [
+        "HEA-10 - Peter reports the sugar retest",
+        "HEA-09 - Mary and the inhaler she stopped buying",
+        "HEA-08 - Dental hours",
+        "HEA-07 - Otieno's back pain and the boda posture",
+        "HEA-06 - Wambui renegotiates the iron tablets",
+        "HEA-05 - Samuel wants the diabetes menu dictated",
+        "HEA-04 - Saturday hours and lab results",
+        "HEA-03 - Agnes weighs stopping the syrup early",
+        "HEA-02 - Diana checks every small decision after her UTI visit",
+        "HEA-01 - Josephine manages her new blood pressure diagnosis"
+      ],
+      "evaluators": [
+        "Q1: Belief or aspiration shift",
+        "Q2: Specific action or decision",
+        "Q3: Links action to a life outcome",
+        "Q4: Uses past experience"
+      ]
+    },
+    "Agriculture AI Advisor \u2014 Agency Coding": {
+      "uuid": "23c99598-16aa-48cc-a048-d1f968ed5f05",
+      "item_ids": [
+        "ddba6ac1-45ae-42bc-9a67-0979f5ff65a8",
+        "c4b2971c-84aa-4e06-960e-0b03dc5abf57",
+        "9707a718-e3b8-4270-a3f8-168101a22c5d",
+        "c318773d-74f2-44de-80d2-876f559320b3",
+        "7a7ce144-aa06-41dc-b09e-1ddb53e87e1d",
+        "ef08e0d9-20b7-4839-98b3-639b4b656bdf",
+        "abb850d9-c5c5-4cf2-9939-3902cc35d664",
+        "7071da5c-4d76-4ad2-b1d5-05e39b731946",
+        "7c737405-5ca1-4c29-92ae-b6191e5b7c62",
+        "c4231c7a-b6f6-4238-b607-473077b5c3ae"
+      ],
+      "item_names": [
+        "AGR-10 - Chebet's group vaccination worked",
+        "AGR-09 - Omondi and the third failed season",
+        "AGR-08 - Varieties of beans",
+        "AGR-07 - Naliaka's yellowing sukuma and the compost idea",
+        "AGR-06 - Kiprop challenges the fertilizer maths",
+        "AGR-05 - Esther follows the export program to the letter",
+        "AGR-04 - Treatment for maize rust",
+        "AGR-03 - Wangari sprays the tomatoes but the staking waits",
+        "AGR-02 - Nzioka asks the bot to choose his crop",
+        "AGR-01 - Josphat catches the armyworm early"
+      ],
+      "evaluators": [
+        "Q1: Belief or aspiration shift",
+        "Q2: Specific action or decision",
+        "Q3: Links action to a life outcome",
+        "Q4: Uses past experience"
+      ]
+    }
+  }
+}

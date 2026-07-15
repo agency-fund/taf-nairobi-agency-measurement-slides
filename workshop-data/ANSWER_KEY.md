@@ -1,70 +1,94 @@
 # Facilitator answer key - NOT for upload or distribution
 
-Intended labels per conversation. Q1 own goal / Q2 critical engagement /
-Q3 expressed confidence / Q4 follow-through. 'Mixed' rows are deliberate:
-they exist to generate disagreement for the debrief.
+Binary labels (1 = yes, 0 = no) per conversation, on the flywheel rubric.
+An asterisk (*) marks intended-but-contested labels: binary forces a choice
+on borderline evidence, and those forced choices are the debrief fuel.
+Registers are grounded in style analysis of real Udhyam / Noora Health /
+Digital Green data (no real user content reproduced). Engagement varies on
+purpose: most real traffic is casual, and all-zero must be a comfortable
+answer.
 
 Coding questions (configure as Calibrate evaluators, identical for all three tasks).
-Framework: Bandura's agentic processes (as in the TAF x Jigsaw blog) plus the
-personal / proxy / collective modes of agency (Bandura 2001; Chong et al. 2021, JRCS).
+Framework: the TAF agency flywheel -- one simple BINARY question per node.
+Answer 1 = yes, 0 = no. Reasoning optional but encouraged.
 
-Q1 GOALS AND PLANS (intentionality + forethought)
-   Does the user set or refine goals and plans of their own during the
-   conversation, beyond what the AI suggests?
-   Yes / No / Mixed. Reasoning optional but encouraged.
+Q1 BELIEF OR ASPIRATION SHIFT (beliefs and aspirations)
+   Does the user express a new or changed sense of what is possible for them?
+   Count new ideas and hope ("never thought of it like that") AND lost hope
+   ("business is for rich kids"). Note the direction in your reasoning.
+   A long-held goal merely restated does not count.
 
-Q2 ACTING AND ADJUSTING (self-reactiveness)
-   Does the user report taking action, tracking progress, or adjusting
-   course when things change? (First-session conversations often give
-   little evidence here; Mixed is a fair answer.)
-   Yes / No / Mixed.
+Q2 SPECIFIC ACTION OR DECISION (purposeful action and choices)
+   Does the user state a specific action or decision they will take, or have
+   already taken? Concrete plans and completed actions count ("monday i ask
+   the pharmacy", "we vaccinated last week"). Vague interest ("maybe",
+   "we will see") does not.
 
-Q3 REFLECTING (self-reflectiveness)
-   Does the user reflect on their own experience and capabilities: what
-   worked, what they can handle, what they believe now? Note that negative
-   self-assessments still count as reflection.
-   Yes / No / Mixed.
+Q3 LINKS ACTION TO A LIFE OUTCOME (real-world outcomes)
+   Does the user connect the actions or advice to a real-life outcome they
+   care about -- income, harvest, health, school fees? They must say it
+   themselves; pure compliance with no stated why is 0.
 
-Q4 WHO IS THE AUTHOR? (personal / proxy / collective modes)
-   People exercise agency directly, through others acting on their behalf
-   (including an AI), and together with others. When this user leans on the
-   AI or on other people, do they stay the author of their choices, or do
-   they hand the decision over?
-   Yes (stays the author) / No (hands it over) / Mixed.
+Q4 USES PAST EXPERIENCE (interpreted experience)
+   Does the user refer to a past success or failure and use it to inform
+   what they do now? ("last year i sprayed late and lost half, this year i
+   check weekly"). The interpretation can be wrong and still count.
 
 OPEN NOTE
-   Anything else you notice, especially signs the tool may be undermining
-   agency (over-reliance, decisions deferred to the AI, discouragement),
-   and which mode you are seeing: personal, proxy, or collective.
+   Anything else you notice, especially the loop turning backwards:
+   growing discouragement, over-reliance, decisions handed to the AI.
 
 
 | Conv | Q1 | Q2 | Q3 | Q4 | Notes |
 |------|----|----|----|----|-------|
-| EDU-01 | Yes | Yes | Yes | Yes | Anchor high-agency case. Own B+ goal and a revised plan (Q1). Followed the timetable, moved algebra herself when life interfered (Q2). Reflects on when she concentrates best and on her shifted belief about maths (Q3). Checks the AI's advice against her friend's, finds cheaper papers, stays the author (Q4, personal agency). |
-| EDU-02 | No | No | Mixed | No | Delighted dependence, the proxy dilemma in full. No direction of his own (Q1), nothing acted on yet (Q2). Q3 is the trap: 'I don't have to think about any of this stuff anymore' sounds like a self-assessment but it is satisfaction, not reflection on capability. Hands the subject-selection decision to the AI entirely (Q4: proxy agency substituting for personal agency). |
-| EDU-03 | Mixed | Mixed | Mixed | Mixed | Ambiguous flagship. The teaching goal originated with the AI and her family, is an adopted goal her own (Q1)? Planned to approach Mr. Otieno, did not (Q2). 'I feel a bit better' and 'my mum says' cut both ways (Q3). Defers ('whatever you think will work best') yet will do the asking herself (Q4). Built for disagreement on every question. |
-| EDU-04 | No | No | Mixed | Mixed | Anchor low-agency case with two live nuances. Goal is generic ('pass'), first session so nothing to act on. Q3: 'I am not good at these things' IS self-reflection, just with low efficacy, reflectiveness and confidence are different things. Q4: passive compliance with sound advice in a crisis; is that handing over authorship or the rational move? Good debrief provocation. |
-| EDU-05 | Yes | Mixed | Mixed | No | Goal-authorship divergence. The egg business is emphatically her goal, against family doubt (Q1). Action starts this week, nothing done yet (Q2). Sure of the goal, aware she has never priced anything (Q3). But she treats the template as scripture and declines to adapt it to her own kiosk insight (Q4: method handed to the tool). |
-| EDU-06 | Mixed | Yes | Yes | Yes | The inverse of EDU-05. University goal is wavering ('not for people like me', Q1 mixed). Already borrows papers, commits to the lunch plan (Q2). Reflects hard on his constraints and his odds (Q3, negative but genuinely reflective). Redesigns the plan around his real life and rejects the paid booklet (Q4: fully the author). |
-| HEA-01 | Yes | Yes | Yes | Yes | Anchor high-agency case. Attended the visit, handled the post-vaccine fever using earlier guidance (Q2). 'I feel I know what I am doing now' with evidence to back it (Q3). Proposes the outreach alternative herself and verifies with the CHV before spending (Q4, personal agency plus mobilizing a community resource). |
-| HEA-02 | No | Mixed | Mixed | No | Delighted dependence. No goal beyond the next micro-decision (Q1). She does act all day, but only after asking (Q2). 'I don't trust myself without asking you first' is real self-reflection with collapsed self-trust (Q3), keep the reflectiveness-vs-efficacy distinction alive here. Hat choice, walk length, nap timing all get delegated (Q4: proxy substitution). |
-| HEA-03 | Mixed | Mixed | Mixed | Mixed | Ambiguous flagship. The 6-month goal echoes the platform's own campaign messages (Q1). Tried the conversation with the mother-in-law, yielded when pressed (Q2). 'She raised seven children, she knows things also' is careful reflection or deference, coders will split (Q3). Q4 is the rich one: she asks the AI to choose her next move, but her chosen move is mobilizing her husband, proxy substitution and collective agency in the same turn. |
-| HEA-04 | No | Mixed | No | No | Anchor low-agency case. 'What am I supposed to be doing' (Q1). Has attended two ANC visits and takes the tablets, thin but real action (Q2). Little reflection beyond worry (Q3). 'Tell me what to do and I will do it' (Q4). |
-| HEA-05 | Yes | Mixed | Yes | Mixed | Goal-authorship divergence. Facility delivery is fiercely her own goal, born of a near-loss (Q1, Q3: she reflects clearly on the first birth and on the money worry). Writing the list, named Saitoti when pushed (Q2). But 'if it is on the list, I do it' hands the method to the checklist (Q4 mixed: author of the goal, deferential on the means). |
-| HEA-06 | Mixed | Yes | Yes | Yes | Critical engagement under structural strain. Health goal present but clinic attendance wavering (Q1). Ran her own two-week trial of the tablets before stopping, will try night dosing (Q2). Reflects on trade-offs and on the humiliation at the clinic, 'that one is in my hands at least' (Q3). Sets her own terms and demands affordable alternatives (Q4). Is her clinic fatalism low agency or a clear-eyed read of a hostile system? |
-| AGR-01 | Yes | Yes | Yes | Yes | The strongest case in the set. Tested the AI's own advice on half a field before trusting it, reconciled conflicting dosage sources, computed his own savings, designed a staggered-harvest strategy. Every process visible, authorship never leaves his hands. |
-| AGR-02 | No | Mixed | No | No | Delighted dependence. 'You decide, don't give me a story' (Q1). Did report last season's borer outcome, thin follow-through (Q2). 'Farming is easy now, I don't think about it anymore' is a refusal to reflect (Q3). 'You think, I dig' hands the season's decisions to the tool (Q4: proxy substitution stated as a slogan). |
-| AGR-03 | Mixed | Mixed | Mixed | Mixed | Ambiguous flagship. The sukuma plan began as the AI's diversification suggestion (Q1). Bought seed, then stalled on planting and the nursery (Q2). 'The rains confused me' reads as honest reflection or as external excuse (Q3). Agrees politely with everything while quietly not doing it (Q4). Built for disagreement. |
-| AGR-04 | No | Mixed | No | Mixed | Anchor low-agency case with the crisis caveat. Immediate fix, no larger goal (Q1). Will go to the agrovet, accepted the scouting reminder (Q2). No reflection under pressure (Q3). Passive compliance with good advice mid-emergency (Q4): is low measured agency even a problem here? Use this if the debrief goes quiet. |
-| AGR-05 | Yes | Mixed | Yes | Mixed | Goal-authorship divergence. Two years chasing the co-op contract, unmistakably hers (Q1). Starts with seed and the record book (Q2). Reflects on the wait and names the water worry even while deflecting it (Q3). Follows the checklist 'like the Bible' and asks for the seed name, not the reasoning, though she surfaces the brother's drip kit when pushed (Q4 mixed). |
-| AGR-06 | Yes | Yes | Yes | Yes | Critical engagement showcase. Challenges the cost realism, cites last year's failed forecast, counter-proposes his own quarter-acre trial built on a neighbour's variety (collective knowledge feeding personal authorship). The exit talk ('sell the shamba') is brutal reflection, not its absence. Expect argument on whether Q3-as-reflection should also count his low hope. |
+| EDU-01 | 1 | 1 | 1 | 1 | Power-user anchor. Volunteered numbers, a borrow-then-buy test plan, the exam-fee aspiration voiced ('i can pay my exam fee myself'), and a price experiment that overturned the AI's advice. |
+| EDU-02 | 0 | 0 | 0 | 0 | Delighted dependence. No belief movement, no owned action, outcome = teacher acceptance. All-zero is intended; the over-reliance ('u fill i copy') belongs in the open note, not the scores. |
+| EDU-03 | 1* | 1 | 1* | 0 | Ambiguous flagship. Q1: is the terse 'games day!' realization a belief shift? Expect splits. Q2 clear (test Wednesday). Q3: the 500-capital prize — is prize money a 'life outcome he cares about'? Expect splits. He also tries to hand the decision over ('you choose for us') — open-note material. |
+| EDU-04 | 0 | 0* | 0 | 0 | Casual transactional. Q2 is the fight: 'yes (it is for market day)' implies an action underway but he never states one. Intended 0; expect some 1s — that IS the calibration conversation. |
+| EDU-05 | 0* | 1 | 1 | 0 | Own goal, borrowed method. Q1 intended 0: the college aspiration pre-dates the chat and is restated, not changed — the rubric line coders must apply. Q2/Q3 clear. Wants the script verbatim (open note). |
+| EDU-06 | 1 | 1 | 0 | 0 | Constraint pivot. 'our notes are even better than wanjala' after rejecting the AI's list = new sense of possibility. Monday pitch owned. No life outcome stated; nothing from past experience used. |
+| EDU-07 | 1 | 0 | 0 | 0 | Latent spark. 'never thought maths can be business' is a textbook Q1 yes in a 6-message chat. 'maybe i ask them' is the textbook Q2 no — teaches the maybe-rule cleanly. |
+| EDU-08 | 0 | 0 | 0 | 0 | Drive-by (with a bot fallback line). All-zero is correct and common — most real traffic looks like this. |
+| EDU-09 | 1 | 0 | 0 | 1* | Negative loop. Q1 yes with direction = NARROWING ('business is for rich kids'). Q2: 'maybe. dont know' = 0. Q4 is the debate: he uses the flop to conclude business isn't for them — a wrong-but-real use of experience. The rubric says wrong interpretations count. Expect splits. |
+| EDU-10 | 0* | 1 | 1 | 1 | Follow-through. Executed the planned negotiation with her own improvement (record book first). Q1 intended 0 — confidence rises but no possibility shift is stated; expect some 1s. |
+| HEA-01 | 1 | 1 | 1 | 1 | Power-user anchor. Record book, evidence-backed request to space reviews, sister's stroke as the stakes, and 'i see now this pressure thing i can manage it myself' — an explicit Q1 statement. |
+| HEA-02 | 0 | 0 | 0 | 0 | Delighted dependence. Perfectly adherent yet every micro-decision outsourced; asks permission rather than stating decisions. All-zero intended; screenshots-and-follow-exact is open-note material. |
+| HEA-03 | 0* | 1 | 0* | 1 | Ambiguous flagship. Q2 clear (continue with porridge, signs on the wall, Monday checkpoint). Q4 is the centerpiece TRAP: 'last time i stopped and nothing happened' is a real use of past experience that contradicts clinical guidance — it still codes 1. Q1/Q3: nothing explicit; expect splits over the wall-writing and the 300-bob weighing. |
+| HEA-04 | 0 | 0 | 0 | 0 | Drive-by logistics. All-zero correct. |
+| HEA-05 | 0* | 1 | 1 | 1* | Own goal, borrowed method. Q1 intended 0 (the resolve pre-dates the chat). Q3 clear — his brother's leg IS the stated stakes. Q4 debate: is the brother's amputation 'past experience'? It is vicarious, not his own — the rubric doesn't say whose. Expect splits. |
+| HEA-06 | 1* | 1 | 1 | 1 | Critical engagement under strain. Q2/Q3/Q4 all firing (monday pharmacy plan; market-morning income; the lost-morning queue experience). Q1 debate: 'there is a cheaper same one??' is a shift in what is possible — but about the system, not herself. Expect splits. |
+| HEA-07 | 1 | 0 | 0 | 0 | Latent spark. 'eh it is the bike??' — the reframe lands (Q1 yes). 'maybe i try the stretches' = Q2 no by the maybe-rule. |
+| HEA-08 | 0 | 0 | 0 | 0 | Drive-by. All-zero correct. |
+| HEA-09 | 1 | 0 | 0 | 1* | Negative loop. Q1 yes, direction = NARROWING ('those things work for other people'). Q2: 'maybe after mid month' = 0. Q4 debate: she supplies 'march was ok' but resists using it — does referencing experience under prompting count? Expect splits. |
+| HEA-10 | 0* | 1 | 0* | 1 | Follow-through. Executed retest and soda plan; honest about weekends; uses the month's result to continue (Q4). Q1: does 💪 + extending the test to his wife signal a shift? Intended 0. Q3: the why (mother-in-law's diabetes) is about his wife's risk, stated thinly — intended 0, expect splits. |
+| AGR-01 | 1 | 1 | 1 | 1 | Power-user anchor. 'this year i check every week' + 'this harvest must pay the school fees this time' — belief, action, stakes, and last year's loss all stated by the farmer himself. |
+| AGR-02 | 0 | 1* | 0 | 1* | Delighted dependence — and the rubric-limits lesson. He WILL plant greengrams (Q2 = 1 by the letter of the rubric) and he DID cite two dried seasons (Q4 = 1 by the letter). Yet every conclusion is the bot's and he dismisses his neighbour. Binary scores look like engagement; the open note carries the dependence. Expect splits and use them in the debrief. |
+| AGR-03 | 1* | 1* | 0* | 0* | Ambiguous flagship — all four contested. Sprays diligently (done = Q2 1?) while the staking stalls behind twine prices and a mother-in-law's counter-authority ('we will see'). The greenhouse line: new aspiration or old talk? Nothing explicitly links actions to outcomes; the price question implies it. Built for disagreement on every question. |
+| AGR-04 | 0 | 0* | 0 | 0 | Casual transactional with a duplicate re-tapped question (real chip behaviour). Intended all-zero; the implied upcoming spray may draw some Q2 1s. |
+| AGR-05 | 0* | 1 | 1 | 1* | Own goal, borrowed method. The two-year contract goal is restated, not changed (Q1 intended 0). Inspection booked, dates fixed (Q2), fees + house stated (Q3). Q4 debate: copying the neighbour's husks IS using someone's past success — vicarious again, and arguably rational in a contract year. The provocation item. |
+| AGR-06 | 1* | 1 | 0* | 1 | Critical engagement. Designs his own three-acre trial (Q2), uses last season's 11 bags and the subsidy queue (Q4). Q1 debate: the exit threshold ('i lease and ride boda') is a narrowing signal even as belief in his own testing grows — both directions in one conversation. Q3: no wanted outcome stated beyond viability; intended 0. |
+| AGR-07 | 1 | 0 | 0 | 0 | Latent spark. 'peels can become fertilizer??' — possibility widens. 'maybe i make one heap' = Q2 no by the maybe-rule. Clean pairing with EDU-07/HEA-07. |
+| AGR-08 | 0 | 0 | 0 | 0 | Drive-by fragment query ('varieties of beans.'), 2 messages — the shortest item. All-zero correct. |
+| AGR-09 | 1 | 0 | 0 | 1 | Negative loop. Q1 yes, NARROWING ('farming here is finished') with a flicker at the father's greengrams. Q2: 'let me see... maybe the eighth acre' = 0 by the maybe-rule. Q4: uses three seasons and the cousin's fake-seed experience to reject options — wrong-direction use still counts. |
+| AGR-10 | 1 | 1 | 1 | 1 | Follow-through. Vaccinated (counted 2 deaths to 0), booster booked, scaling the group mechanism to feed, '50 birds by december' target, and the fees chain stated. Collective agency for the open note. |
 
-## Suggested item order per task (as uploaded)
-01 high anchor, 02 dependence, 03 ambiguous flagship, 04 low anchor,
-05 goal-tool divergence, 06 critical-but-discouraged.
-Participants code top-to-bottom; most will finish 2-3 items, so overlap
-concentrates on 01-03, which is where the debrief material lives.
+## Profile matrix (same 10 slots per domain, in upload order)
+01 power user high anchor, 02 delighted dependence, 03 ambiguous flagship,
+04 casual transactional, 05 own goal / borrowed method, 06 critical
+engagement under strain, 07 casual with one latent spark, 08 drive-by,
+09 negative loop (narrowing beliefs code 1 on Q1!), 10 returning user
+with follow-through.
 
 ## Flagship debrief items
-EDU-03 / HEA-03 / AGR-03 (adopted goals, polite deference, partial
-follow-through) and the Q3 trap in EDU-02 (satisfaction is not efficacy).
+HEA-03 Q4 is the centerpiece trap: her use of past experience ('i stopped
+and nothing happened') codes 1 AND contradicts clinical guidance — the
+flywheel turning is not the same as turning WELL.
+AGR-02 is the rubric-limits lesson: by the letter, the most dependent
+farmer scores 1 on Q2 and Q4 — binary labels can't see ownership; the
+open note can.
+The maybe-rule trio EDU-07 / HEA-07 / AGR-07: real belief shift, but
+'maybe' never codes 1 on Q2.
+The vicarious-experience pair HEA-05 / AGR-05: does someone ELSE's past
+count as experience? The rubric is silent — let tables fight it out.
+Provocation if discussion stalls: AGR-05, 'i am not experimenting in a
+contract year' — is deference under high stakes low agency, or rational?

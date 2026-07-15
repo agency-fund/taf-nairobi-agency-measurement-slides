@@ -14,10 +14,11 @@ same rubric.
 |------|------|
 | `index.html` + `slides/` | 14-slide HTML deck (TAF web design system). Double-click `index.html`; arrow keys to present; works offline. |
 | `agency-measurement-deck.pdf` | Vector PDF export of the deck (backup / sharing). |
-| `workshop-data/generate_conversations.py` | Source of truth for the 18 synthetic conversations and the coding rubric. Edit here, re-run to regenerate. |
-| `workshop-data/education_ai_mentor.csv` | 6 conversations, AI educational mentor (upload to Calibrate as annotation task 1). |
-| `workshop-data/health_ai_assistant.csv` | 6 conversations, AI health assistant (task 2). |
-| `workshop-data/agriculture_ai_advisor.csv` | 6 conversations, AI agricultural advisor (task 3). |
+| `workshop-data/generate_conversations.py` | Source of truth for the 30 synthetic conversations and the coding rubric. Edit here, re-run to regenerate. |
+| `workshop-data/education_ai_mentor.csv` | 10 conversations, AI mentor inside a school entrepreneurship programme (Calibrate annotation task 1). |
+| `workshop-data/health_ai_assistant.csv` | 10 conversations, post-visit patient follow-up line of a clinic network (task 2). |
+| `workshop-data/agriculture_ai_advisor.csv` | 10 conversations, FarmerChat-style advisory bot for smallholders (task 3). |
+| `workshop-data/calibrate_ids.json` | UUIDs of the live Calibrate evaluators, tasks, and items (workspace: TAF Onsite Workshop on calibrate.learning.org.ai). |
 | `workshop-data/ANSWER_KEY.md` | Facilitator-only: intended labels, exact evaluator wording for Calibrate, debrief notes. Do not upload or distribute. |
 | `workshop-materials/qr-cards-template.html` | Print sheet for labeller-link QR cards. Paste real Calibrate links into the `LINKS` object, open in a browser, print, cut. |
 | `workshop-materials/facilitation-crib.html` | One-page run of show, Calibrate setup checklist, contingencies, debrief ammunition. Print it. |
@@ -42,27 +43,42 @@ same rubric.
 
 ## The coding rubric
 
-Grounded in Bandura's agentic processes as presented in the TAF x Jigsaw blog, plus
-Bandura's three modes of agency as applied to AI chatbots by Chong et al. (2021):
+One simple **binary** question (Yes/No) per node of the TAF agency flywheel (deck slide 2):
 
-1. **Goals and plans** (intentionality + forethought)
-2. **Acting and adjusting** (self-reactiveness)
-3. **Reflecting** (self-reflectiveness; negative self-assessments count)
-4. **Who is the author?** (personal / proxy / collective: deliberate delegation vs. handing decisions over)
-5. Open note, including undermining signs and which mode of agency appears
+1. **Belief or aspiration shift** — new or changed sense of what is possible; lost hope counts too, note the direction
+2. **Specific action or decision** — stated concrete plans or completed actions; "maybe" doesn't count
+3. **Links action to a life outcome** — income, harvest, health, fees, said by the user themselves
+4. **Uses past experience** — refers to a past success/failure and uses it; the interpretation can be wrong and still count
+5. Open note, especially the loop turning backwards: discouragement, over-reliance, decisions handed to the AI
 
-Answers are Yes / No / Mixed with optional reasoning. Exact wording in `ANSWER_KEY.md`.
+Binary on purpose: borderline cases force a choice, and the forced choices generate
+the disagreement the debrief runs on. Exact wording in `ANSWER_KEY.md`.
 
 ## The signal matrix behind the conversations
 
-Each domain has the same six planted profiles (intended labels in `ANSWER_KEY.md`):
+Each domain has the same ten planted profiles (intended labels in `ANSWER_KEY.md`),
+with engagement varied on purpose — power users through two-line drive-bys —
+because real traffic is mostly casual and "No" must be a comfortable label:
 
-1. High agency, returning user (anchor)
-2. Delighted dependence (the proxy dilemma; satisfaction without reflection)
+1. Power user, high anchor (long)
+2. Delighted dependence
 3. Ambiguous flagship (built for disagreement)
-4. Passive compliance (anchor, with a crisis caveat worth debating)
+4. Casual transactional (short)
 5. Strong own goal, method handed to the tool
-6. Critical engagement under discouragement or structural strain
+6. Critical engagement under structural strain
+7. Casual user with one latent spark (short)
+8. Drive-by info question (all-No is the correct answer)
+9. Negative loop (narrowing beliefs still code Yes on Q1)
+10. Returning user with visible follow-through
+
+The scenarios are grounded in real deployment patterns: a school
+entrepreneurship programme where the AI supplements a standard curriculum
+(Udhyam-style), a clinic network's post-visit patient line (Penda-style), and
+a FarmerChat-style agronomy Q&A bot. Registers are calibrated against style
+analysis of small samples of real Udhyam, Noora Health, and Digital Green
+message data (no real user content is reproduced): terse user turns, one-word
+acknowledgments, tapped suggestion-chips, message bursts with delayed replies,
+duplicate re-sent queries, and formulaic structured AI responses.
 
 ## Regenerating or editing
 
