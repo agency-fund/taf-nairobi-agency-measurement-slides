@@ -58,7 +58,7 @@
           stroke-dasharray="1608.5" stroke-dashoffset="0" transform="rotate(-90 280 280)"/>
       </svg>
       <div class="tm-digits">
-        <p class="clk" id="tmClock">20:00</p>
+        <p class="clk" id="tmClock">40:00</p>
         <p class="st" id="tmState">Ready</p>
       </div>
     </div>
@@ -67,9 +67,8 @@
       <div class="tm-group">
         <span class="glab">Set</span>
         <button class="tm-btn" type="button" data-min="5">5 min</button>
-        <button class="tm-btn" type="button" data-min="10">10 min</button>
         <button class="tm-btn" type="button" data-min="15">15 min</button>
-        <button class="tm-btn active" type="button" data-min="20">20 min</button>
+        <button class="tm-btn active" type="button" data-min="40">40 min</button>
       </div>
       <div class="tm-group">
         <button class="tm-btn" type="button" id="tmMinus">&minus;1 min</button>
@@ -85,7 +84,7 @@
 <script>
 (function () {
   var C = 2 * Math.PI * 256;
-  var total = 20 * 60, remaining = total, running = false, endAt = 0, tick = null;
+  var total = 40 * 60, remaining = total, running = false, endAt = 0, tick = null;
   var clock = document.getElementById('tmClock');
   var state = document.getElementById('tmState');
   var prog = document.getElementById('tmProg');
