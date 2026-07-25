@@ -20,7 +20,7 @@ same rubric.
 | `workshop-data/agriculture_ai_advisor.csv` | 10 conversations, FarmerChat-style advisory bot for smallholders (task 3). |
 | `workshop-data/calibrate_ids.json` | UUIDs of the live Calibrate evaluators, tasks, and items (workspace: TAF Onsite Workshop on calibrate.learning.org.ai). |
 | `workshop-data/ANSWER_KEY.md` | Facilitator-only: intended labels, exact evaluator wording for Calibrate, debrief notes. Do not upload or distribute. |
-| `workshop-materials/qr-cards-template.html` | Print sheet for labeller-link QR cards. Paste real Calibrate links into the `LINKS` object, open in a browser, print, cut. |
+| `workshop-materials/qr-cards-template.html` | Unused fallback: print sheet for labeller-link QR cards. The live flow is a shared Google claim sheet (one row per pre-generated labeller link, participants claim by typing their name) reached via the QR on slide 09-launch. Link tokens live in gitignored `workshop-data/annotator_links.json`. |
 | `workshop-materials/facilitation-crib.html` | One-page run of show, Calibrate setup checklist, contingencies, debrief ammunition. Print it. |
 | `docs/` | Reference papers, including Chong, Yu, Keeling & de Ruyter (2021, JRCS), the source for the modes-of-agency coding question. |
 
@@ -36,7 +36,7 @@ same rubric.
 8. The blog's three steps: define locally, measure with the right tools on the right data at the right moment, validate iteratively
 9. Scope caveat: transcript coding is one way in, suited to conversational products, not the whole toolbox
 10. Part 2 divider
-11. Workshop launch (domain card piles, QR labeller links, individual coding then table adjudication)
+11. Workshop launch (shared Google claim sheet via on-screen QR, one labeller link per person, paired coding then table adjudication)
 12. The coding rubric (stays projected during coding)
 13. Debrief: live Calibrate agreement view, LLM judge comparison, the scaling argument
 14. Close: agency measurement is interesting, necessary, and complex; start anyway (blog, Claude skill, NotebookLM, eval playbook)

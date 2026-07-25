@@ -2,3 +2,5 @@ node_modules/
 _verify/
 .DS_Store
 .env
+# labeller-link tokens are live credentials; repo publishes to public GitHub Pages
+workshop-data/annotator_links.json

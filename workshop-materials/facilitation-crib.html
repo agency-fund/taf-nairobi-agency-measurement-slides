@@ -38,7 +38,7 @@
   <tr><td class="t">0:00-0:04</td><td>Settle + the flywheel (slide 2)</td><td>Open on the foundation, not on AI. AI enters as touchpoints on the same loop.</td></tr>
   <tr><td class="t">0:04-0:09</td><td>Gain and loss examples (slides 3-4)</td><td>Personal, proxy, collective. Land the closer: every user on the losses slide looks like a dashboard success.</td></tr>
   <tr><td class="t">0:09-0:19</td><td>Definitions, 2x2, four levels, three steps, scope caveat (slides 5-9)</td><td>Roughly 2 min per slide. Slide 9 manages expectations: transcripts are one way in, not the toolbox.</td></tr>
-  <tr><td class="t">0:19-0:23</td><td>Launch (slides 10-11)</td><td>Card piles out BEFORE the session. One card per person. Pairs OK for phone-less people.</td></tr>
+  <tr><td class="t">0:19-0:23</td><td>Launch (slides 10-11)</td><td>Slide 11 shows the claim-sheet QR. One link per person: type your name next to the lowest unclaimed code in your table's domain block, then open that row's link. Pairs OK for phone-less people. Keep the sheet open on your own laptop and watch the name column fill.</td></tr>
   <tr><td class="t">0:23-0:35</td><td>Individual coding (slide 12 stays up)</td><td>Circulate. Nudge people past item 1 by minute 5. "Pick Yes or No and write one line of reasoning — your hesitation is the data."</td></tr>
   <tr><td class="t">0:35-0:42</td><td>Table adjudication</td><td>Prompt: find one conversation where you split, argue the evidence, nominate the hardest case.</td></tr>
   <tr><td class="t">0:42-0:51</td><td>Debrief (slide 13 + live Calibrate)</td><td>Agreement view per domain, then the pre-run LLM judge. 2-3 tables share their hard case. Land the scaling point: validated rubric + LLM = consistent measurement at scale.</td></tr>
@@ -52,7 +52,7 @@
 <ul>
   <li>Create <strong>3 annotation tasks</strong>, one per domain, from <code>workshop-data/*.csv</code> (10 conversations each, keep upload order: it is the intended coding order, and lengths vary on purpose — power users to two-line drive-bys).</li>
   <li>Configure <strong>4 binary evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (the flywheel, one question per node: belief shift / specific action / life-outcome link / uses past experience). Answer options: <strong>Yes / No</strong> only — binary on purpose, borderline cases force a choice and that is the disagreement fuel. Reasoning optional.</li>
-  <li>Generate <strong>~20 labeller links per task</strong>, paste into <code>qr-cards-template.html</code>, print, cut, stack by color.</li>
+  <li><strong>DONE:</strong> 20 labeller links per task pre-generated (labelling jobs EDU/HEA/AGR-01&ndash;20; tokens in gitignored <code>workshop-data/annotator_links.json</code>) and collected in the <strong>Google claim sheet</strong> linked from slide 11's QR. Sharing must be <strong>"Anyone with the link: Editor"</strong> &mdash; verify from an incognito window. The name column doubles as the seat-code &rarr; real-name map for the debrief (Calibrate shows annotators as EDU-07 etc.).</li>
   <li><strong>Pre-run the LLM evaluator</strong> on all 30 items with the same four questions. The debrief reveal must not depend on a live API call.</li>
   <li>Open a labeller link <strong>on your own phone</strong>: confirm the labeling UI is usable on mobile.</li>
   <li>Dry-run the full loop with 2-3 colleagues: code, adjudicate, read the agreement view. Time it.</li>
@@ -60,7 +60,7 @@
 
 <h2>Asks for Aman</h2>
 <ul>
-  <li>Bulk generation of ~60 labeller links (or the fastest manual route).</li>
+  <li><s>Bulk generation of ~60 labeller links</s> &mdash; done via API (see claim sheet).</li>
   <li>Confirm the agreement summary view can be shown per task on a projector mid-session, refreshed live.</li>
   <li>Confirm an evaluation run on annotation items can be triggered (or pre-run) and compared against human labels in one view.</li>
 </ul>
@@ -73,7 +73,9 @@
 </div>
 <ul>
   <li><strong>Turnout much smaller than expected:</strong> drop to two domains (education + whichever fits the room); merge tables to 4+ coders each so agreement stats still mean something.</li>
-  <li><strong>Turnout much larger:</strong> cards run out at 20/domain; pairs share a link, which is fine: pair-consensus labels still disagree across pairs.</li>
+  <li><strong>Turnout much larger:</strong> links run out at 20/domain; pairs share a link, which is fine: pair-consensus labels still disagree across pairs.</li>
+  <li><strong>Sheet chaos (two names in one row, someone edits headers):</strong> announce "lowest unclaimed code in your block"; worst case assign code ranges to tables verbally ("table 1: EDU-01 to 06"). A dead or mis-clicked link: strike it through, take the next unclaimed row.</li>
+  <li><strong>QR won't scan from the screen:</strong> drop the sheet link in the event WhatsApp/chat; it is also on the claim sheet's browser tab of your own laptop to read out.</li>
   <li><strong>Running 10 min behind after the talk:</strong> cut coding to 8 min and adjudication to 5. Never cut the debrief: it carries the whole lesson.</li>
   <li><strong>A table finishes early:</strong> send them to item 03 (the ambiguous flagship) if they skipped it, or ask them to draft one improvement to any question's wording.</li>
 </ul>
@@ -89,7 +91,7 @@
 <h2>Materials checklist (day before)</h2>
 <ul>
   <li>Deck opens offline from <code>index.html</code> (double-click, no server needed); PDF backup <code>agency-measurement-deck.pdf</code> on a USB stick.</li>
-  <li>QR cards printed and cut, three colored stacks; a handful of spare blank cards with the fallback landing URL handwritten.</li>
+  <li>Claim sheet: sharing set to "Anyone with the link: Editor", tested from an incognito window (open, type a name, click a link, then clear the test name). Slide 11 QR scans from a projected screen. Sheet link ready to paste in the event chat as backup. (<code>qr-cards-template.html</code> remains as an unused fallback for printed cards.)</li>
   <li>Printed transcript sets (wifi contingency), one per table.</li>
   <li>Calibrate: 3 tasks live, links tested, LLM evaluation pre-run, agreement views bookmarked in three browser tabs.</li>
   <li>This crib sheet, printed.</li>
