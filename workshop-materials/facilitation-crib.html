@@ -36,13 +36,13 @@
 <table>
   <tr><th>Clock</th><th>Segment</th><th>Notes to self</th></tr>
   <tr><td class="t">0:00-0:04</td><td>Settle + the flywheel (slide 2)</td><td>Open on the foundation, not on AI. AI enters as touchpoints on the same loop.</td></tr>
-  <tr><td class="t">0:04-0:09</td><td>Gain and loss examples (slides 3-4)</td><td>Personal, proxy, collective. Land the closer: every user on the losses slide looks like a dashboard success.</td></tr>
-  <tr><td class="t">0:09-0:19</td><td>Definitions, 2x2, four levels, three steps, scope caveat (slides 5-9)</td><td>Roughly 2 min per slide. Slide 9 manages expectations: transcripts are one way in, not the toolbox.</td></tr>
-  <tr><td class="t">0:19-0:23</td><td>Launch (slides 10-11)</td><td>Flip to the clock screen right after the launch steps: it carries the claim QR + short link <code>bit.ly/44QhF4e</code> and stays up during coding. One link per person: type your name next to the lowest unclaimed code in your table's domain block, then open that row's link. Pairs OK for phone-less people. Keep the sheet open on your own laptop and watch the name column fill.</td></tr>
-  <tr><td class="t">0:23-0:35</td><td>Individual coding (slide 12 stays up)</td><td>Circulate. Nudge people past item 1 by minute 5. "Pick Yes or No and write one line of reasoning — your hesitation is the data."</td></tr>
+  <tr><td class="t">0:04-0:09</td><td>Gain and loss examples (slide 3)</td><td>Personal, proxy, collective. Land the closer: every user on the losses side looks like a dashboard success.</td></tr>
+  <tr><td class="t">0:09-0:19</td><td>2x2, four levels, three steps (slides 4-6)</td><td>Roughly 3 min per slide. Slide 6 manages expectations: transcript coding is one way in, not the toolbox.</td></tr>
+  <tr><td class="t">0:19-0:23</td><td>Launch (slide 8, then flip to the clock, slide 10)</td><td>Seating first: NGOs sit as teams — more than three people split into pairs, three or fewer work as one group; TAF members pair with funders and spread across the three domains. The clock screen carries the claim QR + short link <code>bit.ly/44QhF4e</code> and stays up during coding. One link per pair (or small group): type your names next to the lowest unclaimed code in your domain block, then open that row's link. Keep the sheet open on your own laptop and watch the name column fill.</td></tr>
+  <tr><td class="t">0:23-0:35</td><td>Paired coding (rubric slide 9 stays up)</td><td>Circulate. Nudge pairs past item 1 by minute 5. "Pick Yes or No and write one line of reasoning — your hesitation is the data."</td></tr>
   <tr><td class="t">0:35-0:42</td><td>Table adjudication</td><td>Prompt: find one conversation where you split, argue the evidence, nominate the hardest case.</td></tr>
-  <tr><td class="t">0:42-0:51</td><td>Debrief (slide 13 + live Calibrate)</td><td>Agreement view per domain, then the pre-run LLM judge. 2-3 tables share their hard case. Land the scaling point: validated rubric + LLM = consistent measurement at scale.</td></tr>
-  <tr><td class="t">0:51-0:58</td><td>Close (slide 14)</td><td>Message: interesting, necessary, complex, start anyway. Point at the four take-home tools.</td></tr>
+  <tr><td class="t">0:42-0:51</td><td>Debrief (slide 11 + live Calibrate)</td><td>Agreement view per domain, then the pre-run LLM judge. 2-3 tables share their hard case. Land the scaling point: validated rubric + LLM = consistent measurement at scale.</td></tr>
+  <tr><td class="t">0:51-0:58</td><td>Close (slide 12)</td><td>Message: interesting, necessary, complex, start anyway. Point at the four take-home tools.</td></tr>
   <tr><td class="t">0:58-0:65</td><td>Q&amp;A / buffer</td><td>If running long, Q&amp;A absorbs the overrun; the close does not get cut.</td></tr>
 </table>
 
@@ -51,7 +51,7 @@
 <h2>Calibrate setup (before the day)</h2>
 <ul>
   <li>Create <strong>3 annotation tasks</strong>, one per domain, from <code>workshop-data/*.csv</code> (10 conversations each, keep upload order: it is the intended coding order, and lengths vary on purpose — power users to two-line drive-bys).</li>
-  <li>Configure <strong>4 binary evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (the flywheel, one question per node: belief shift / specific action / life-outcome link / uses past experience). Answer options: <strong>Yes / No</strong> only — binary on purpose, borderline cases force a choice and that is the disagreement fuel. Reasoning optional.</li>
+  <li>Configure <strong>4 binary evaluators + 1 comment field</strong> per task, wording exactly as in <code>workshop-data/ANSWER_KEY.md</code> (the flywheel, one question per node: motivation / action and choice / linking advice or action to outcome / updated mental model). Answer options: <strong>Yes / No</strong> only — binary on purpose, borderline cases force a choice and that is the disagreement fuel. Reasoning optional.</li>
   <li><strong>DONE:</strong> 20 labeller links per task pre-generated (labelling jobs EDU/HEA/AGR-01&ndash;20; tokens in gitignored <code>workshop-data/annotator_links.json</code>) and collected in the <strong><a href="https://docs.google.com/spreadsheets/d/1EFiydj01k9RCmOiisyRJLZysTd5DGBamqnsMPQDrGUQ/edit">Google claim sheet</a></strong> (short link <code>bit.ly/44QhF4e</code>), reached via the QR on the clock screen. Sharing must be <strong>"Anyone with the link: Editor"</strong> &mdash; verify from an incognito window. The name column doubles as the seat-code &rarr; real-name map for the debrief (Calibrate shows annotators as EDU-07 etc.).</li>
   <li><strong>Pre-run the LLM evaluator</strong> on all 30 items with the same four questions. The debrief reveal must not depend on a live API call.</li>
   <li>Open a labeller link <strong>on your own phone</strong>: confirm the labeling UI is usable on mobile.</li>
@@ -69,11 +69,11 @@
 <div>
 <h2>Contingencies</h2>
 <div class="warn">
-  <strong>Wifi dies:</strong> print the transcripts beforehand (one set per table; items 01-06 of each domain suffice on paper). Coding happens on paper against slide 12; adjudication and debrief proceed; slide 13 walks the same three beats without live numbers, and the Noora Health experience carries the calibration point.
+  <strong>Wifi dies:</strong> print the transcripts beforehand (one set per table; items 01-06 of each domain suffice on paper). Coding happens on paper against slide 9; adjudication and debrief proceed; slide 11 walks the same three beats without live numbers, and the Noora Health experience carries the calibration point.
 </div>
 <ul>
   <li><strong>Turnout much smaller than expected:</strong> drop to two domains (education + whichever fits the room); merge tables to 4+ coders each so agreement stats still mean something.</li>
-  <li><strong>Turnout much larger:</strong> links run out at 20/domain; pairs share a link, which is fine: pair-consensus labels still disagree across pairs.</li>
+  <li><strong>Turnout much larger:</strong> 20 links/domain at one per pair covers ~40 coders per domain; if they still run out, trios share a link — group-consensus labels still disagree across groups.</li>
   <li><strong>Sheet chaos (two names in one row, someone edits headers):</strong> announce "lowest unclaimed code in your block"; worst case assign code ranges to tables verbally ("table 1: EDU-01 to 06"). A dead or mis-clicked link: strike it through, take the next unclaimed row.</li>
   <li><strong>QR won't scan from the screen:</strong> read out or chat-drop <code>bit.ly/44QhF4e</code> (case-sensitive); it is also on the claim sheet's browser tab of your own laptop.</li>
   <li><strong>Running 10 min behind after the talk:</strong> cut coding to 8 min and adjudication to 5. Never cut the debrief: it carries the whole lesson.</li>
@@ -82,8 +82,8 @@
 
 <h2>Debrief ammunition</h2>
 <div class="gold">
-  <strong>Flagship disagreement items:</strong> HEA-03 Q4 is the centerpiece trap — "I stopped the syrup early and nothing happened" codes <em>Yes</em> on uses-past-experience AND contradicts clinical guidance: the flywheel turning is not the same as turning <em>well</em>. AGR-02 is the rubric-limits lesson — by the letter, the most dependent farmer scores Yes on Q2 and Q4; binary labels can't see ownership, only the open note can. <strong>The maybe-rule trio</strong> EDU-07 / HEA-07 / AGR-07: real belief shift (Q1 Yes), but "maybe i try" never codes Yes on Q2. <strong>The direction nuance:</strong> EDU-09 / HEA-09 / AGR-09 are negative loops — lost hope still codes Yes on Q1. <strong>The all-No trio:</strong> EDU-08 / HEA-08 / AGR-08 are drive-bys; all-No is correct, and anyone who finds agency there is the calibration conversation. <strong>The vicarious-experience pair</strong> HEA-05 / AGR-05: does someone ELSE's past (a brother's amputation, a neighbour's inspection pass) count as "past experience"? The rubric is silent — let tables fight it out.<br><br>
-  <strong>AGR-05 provocation if discussion stalls:</strong> Esther refuses to adapt anything in a contract year — "i am not experimenting in a contract year." Is deference under high stakes low agency, or exactly the rational move?
+  <strong>Flagship disagreement items:</strong> HEA-02 and AGR-02 are the by-the-letter traps — read the words alone and the most dependent users score Yes on several questions ("tomorrow i send you my lunch plan to check" is literally a stated plan); binary labels can't see ownership, only the open note can. HEA-09 Q2 is the direction-blindness lesson — "for now steam at night" is a stated action taken <em>instead of</em> the advice: the flywheel turning is not the same as turning <em>well</em>. <strong>The maybe-rule trio</strong> EDU-07 / HEA-07 / AGR-07: the mental model clearly updates (Q4 Yes), but "maybe i try" never codes Yes on Q2 — and splits Q1. <strong>The direction nuance:</strong> EDU-09 / HEA-09 / AGR-09 are negative loops — falling motivation codes No on Q1, yet the narrowed belief ("farming here is finished") still codes Yes on Q4; is hardened fatalism a changed belief or a long-held one restated? <strong>The all-No trio:</strong> EDU-08 / HEA-08 / AGR-08 are drive-bys; all-No is correct, and anyone who finds agency there is the calibration conversation. <strong>The own-goal trio</strong> EDU-05 / HEA-05 / AGR-05: motivated doers with the why stated — and zero mental-model movement; Q4 is what separates doing from learning.<br><br>
+  <strong>AGR-05 provocation if discussion stalls:</strong> Esther refuses to adapt anything in a contract year — "i am not experimenting in a contract year." Is refusing to update your model under high stakes low agency, or exactly the rational move?
 </div>
 </div>
 </div>

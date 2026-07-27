@@ -1,10 +1,10 @@
 {
   "api_base": "https://calibrate-backend.learning.org.ai",
   "evaluators": {
-    "Q1: Belief or aspiration shift": "183368fe-798e-4b0b-b2c1-699c262cc67d",
-    "Q2: Specific action or decision": "b4eb74e6-94e9-4621-bc27-3ba6085bfa0d",
-    "Q3: Links action to a life outcome": "a86523be-4e3c-4b5d-8669-b8965344a460",
-    "Q4: Uses past experience": "6a99483b-49aa-49b4-af77-f61a1742a40e"
+    "Q1: Motivation": "183368fe-798e-4b0b-b2c1-699c262cc67d",
+    "Q2: Action and choice": "b4eb74e6-94e9-4621-bc27-3ba6085bfa0d",
+    "Q3: Linking advice or action to outcome": "a86523be-4e3c-4b5d-8669-b8965344a460",
+    "Q4: Updated mental model": "6a99483b-49aa-49b4-af77-f61a1742a40e"
   },
   "tasks": {
     "Education AI Mentor \u2014 Agency Coding": {
@@ -34,10 +34,10 @@
         "EDU-01 - Cynthia submits her market day update"
       ],
       "evaluators": [
-        "Q1: Belief or aspiration shift",
-        "Q2: Specific action or decision",
-        "Q3: Links action to a life outcome",
-        "Q4: Uses past experience"
+        "Q1: Motivation",
+        "Q2: Action and choice",
+        "Q3: Linking advice or action to outcome",
+        "Q4: Updated mental model"
       ]
     },
     "Health AI Assistant \u2014 Agency Coding": {
@@ -67,10 +67,10 @@
         "HEA-01 - Josephine manages her new blood pressure diagnosis"
       ],
       "evaluators": [
-        "Q1: Belief or aspiration shift",
-        "Q2: Specific action or decision",
-        "Q3: Links action to a life outcome",
-        "Q4: Uses past experience"
+        "Q1: Motivation",
+        "Q2: Action and choice",
+        "Q3: Linking advice or action to outcome",
+        "Q4: Updated mental model"
       ]
     },
     "Agriculture AI Advisor \u2014 Agency Coding": {
@@ -100,10 +100,10 @@
         "AGR-01 - Josphat catches the armyworm early"
       ],
       "evaluators": [
-        "Q1: Belief or aspiration shift",
-        "Q2: Specific action or decision",
-        "Q3: Links action to a life outcome",
-        "Q4: Uses past experience"
+        "Q1: Motivation",
+        "Q2: Action and choice",
+        "Q3: Linking advice or action to outcome",
+        "Q4: Updated mental model"
       ]
     }
   }
