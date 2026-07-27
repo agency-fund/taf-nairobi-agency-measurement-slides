@@ -13,7 +13,7 @@ Framework: the TAF agency flywheel -- one simple BINARY question per node.
 Answer 1 = yes, 0 = no. Reasoning optional but encouraged.
 
 Q1 MOTIVATION (beliefs and aspirations)
-   Does the user show more motivation to do something?
+   Does the user seem more motivated to take action?
    Look for drive that grows in the conversation: eagerness to start, to
    try, to continue ("i start saturday", "we test wednesday break time").
    Motivation that falls (discouragement, giving up) is 0 -- describe it in

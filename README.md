@@ -43,7 +43,7 @@ same rubric.
 
 One simple **binary** question (Yes/No) per node of the TAF agency flywheel (deck slide 2):
 
-1. **Motivation** — does the user show more motivation to do something? Falling motivation is No (open note)
+1. **Motivation** — does the user seem more motivated to take action? Falling motivation is No (open note)
 2. **Action and choice** — does the user say what they decided to do, plan to do, or have already done? "maybe" doesn't count
 3. **Linking advice or action to outcome** — does the user connect the advice or their action to a real-life result they care about (income, harvest, health, fees), said by the user themselves
 4. **Updated mental model** — does the user show a new or changed belief about the situation, what will happen, or what they are able to do? Narrowing beliefs count too; restated long-held beliefs don't
