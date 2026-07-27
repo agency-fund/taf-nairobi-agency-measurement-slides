@@ -362,15 +362,20 @@
   frame.addEventListener('load', () => {
     setTimeout(unveil, 600); // safety: never stay hidden
   });
+  // Slides with click-staged builds report {deckStages: {ahead, back}} so nav
+  // (keys landing here, nav-zone clicks) steps through stages before paging.
+  let slideStages = { ahead: 0, back: 0 };
   window.addEventListener('message', (e) => {
     const d = e.data || {};
     if (d.deckFontsReady) unveil();
+    if (d.deckStages) slideStages = { ahead: d.deckStages.ahead | 0, back: d.deckStages.back | 0 };
     if (d.deckKey) document.dispatchEvent(new KeyboardEvent('keydown', { key: d.deckKey, bubbles: true }));
   });
   function show(idx, dir) {
     if (idx < 0 || idx >= deck.length) return;
     current = idx;
     if (frame.getAttribute('src') !== deck[idx].file) {
+      slideStages = { ahead: 0, back: 0 };
       frame.classList.remove('enter-next', 'enter-prev', 'enter-jump');
       frame.classList.add('loading', dir === 1 ? 'enter-next' : dir === -1 ? 'enter-prev' : 'enter-jump');
       frame.src = deck[idx].file;
@@ -381,6 +386,14 @@
   }
   function next() { show(Math.min(current + 1, deck.length - 1), 1); }
   function prev() { show(Math.max(current - 1, 0), -1); }
+  function stepOrNext() {
+    if (slideStages.ahead > 0) { try { frame.contentWindow.postMessage({ deckStep: 1 }, '*'); } catch (_) { next(); } }
+    else next();
+  }
+  function stepOrPrev() {
+    if (slideStages.back > 0) { try { frame.contentWindow.postMessage({ deckStep: -1 }, '*'); } catch (_) { prev(); } }
+    else prev();
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -388,15 +401,15 @@
     if (e.key === 'p' || e.key === 'P') { window.print(); return; }
     if (document.body.getAttribute('data-mode') !== 'present') return;
     switch (e.key) {
-      case 'ArrowRight': case ' ': case 'PageDown': e.preventDefault(); next(); break;
-      case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'ArrowRight': case ' ': case 'PageDown': e.preventDefault(); stepOrNext(); break;
+      case 'ArrowLeft': case 'PageUp': e.preventDefault(); stepOrPrev(); break;
       case 'Home': e.preventDefault(); show(0); break;
       case 'End': e.preventDefault(); show(deck.length - 1); break;
       default: if (e.key >= '1' && e.key <= '9') { const i = parseInt(e.key, 10) - 1; if (i < deck.length) { e.preventDefault(); show(i); } }
     }
   });
-  document.getElementById('navL').addEventListener('click', () => { prev(); frame.focus(); });
-  document.getElementById('navR').addEventListener('click', () => { next(); frame.focus(); });
+  document.getElementById('navL').addEventListener('click', () => { stepOrPrev(); frame.focus(); });
+  document.getElementById('navR').addEventListener('click', () => { stepOrNext(); frame.focus(); });
   document.getElementById('startBtn').addEventListener('click', () => setMode('present'));
   document.getElementById('overviewBtn').addEventListener('click', () => setMode('overview'));
   let rT;

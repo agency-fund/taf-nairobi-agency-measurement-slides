@@ -12,14 +12,29 @@
   .topbar { position: absolute; top: 64px; left: 120px; }
   .d-eyebrow { font-size: 22px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--gold); margin: 0 0 10px; }
-  .tm-ring { position: relative; width: 560px; height: 560px; margin-top: 6px; }
-  .tm-ring svg { width: 560px; height: 560px; display: block; }
+  /* Two columns: claim card (left) + clock (right) */
+  .tm-cols { flex: 1; min-height: 0; width: 100%; display: grid;
+    grid-template-columns: 700px 1fr; gap: 90px; align-items: center; }
+  .claim-card { background: rgba(255,255,255,0.07); border: 1.5px solid rgba(241,181,5,0.45);
+    border-radius: 18px; padding: 40px 46px; display: flex; flex-direction: column;
+    align-items: center; text-align: center; gap: 20px; }
+  .claim-card .ct { margin: 0; font-size: 32px; font-weight: 800; color: var(--white); line-height: 1.2; }
+  .claim-card svg.qr { width: 380px; height: 380px; border-radius: 12px; }
+  .claim-card .cu { margin: 0; font-size: 48px; font-weight: 900; color: var(--gold);
+    letter-spacing: 0.01em; line-height: 1.1; }
+  .claim-card .cu a { color: inherit; text-decoration: underline;
+    text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  .claim-card .cd { margin: 0; font-size: 20px; font-weight: 400; line-height: 1.45; color: #C9D4E0; max-width: 560px; }
+  .claim-card .cd strong { color: var(--white); font-weight: 700; }
+  .tm-col { display: flex; flex-direction: column; align-items: center; }
+  .tm-ring { position: relative; width: 520px; height: 520px; margin-top: 6px; }
+  .tm-ring svg { width: 520px; height: 520px; display: block; }
   .tm-ring .track { fill: none; stroke: rgba(255,255,255,0.14); stroke-width: 16; }
   .tm-ring .prog { fill: none; stroke: var(--gold); stroke-width: 16; stroke-linecap: round;
     transition: stroke-dashoffset 0.2s linear; }
   .tm-digits { position: absolute; inset: 0; display: flex; flex-direction: column;
     align-items: center; justify-content: center; }
-  .tm-digits .clk { margin: 0; font-size: 128px; font-weight: 900; color: var(--white);
+  .tm-digits .clk { margin: 0; font-size: 118px; font-weight: 900; color: var(--white);
     line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
   .tm-digits .st { margin: 14px 0 0; font-size: 22px; font-weight: 600; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--slate-blue); }
@@ -29,7 +44,8 @@
   body.tm-done .tm-ring { animation: tm-pulse 1.6s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) { body.tm-done .tm-ring { animation: none; } }
 
-  .tm-controls { margin-top: 34px; display: flex; align-items: center; gap: 44px; }
+  .tm-controls { margin-top: 30px; display: flex; align-items: center; justify-content: center;
+    gap: 20px 30px; flex-wrap: wrap; max-width: 700px; }
   .tm-group { display: flex; align-items: center; gap: 12px; }
   .tm-group .glab { font-size: 17px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--slate-blue); margin: 0 6px 0 0; }
@@ -51,32 +67,43 @@
     </div>
     <p class="d-eyebrow" data-reveal>Part 2 &middot; Workshop clock</p>
 
-    <div class="tm-ring" data-reveal="scale">
-      <svg viewBox="0 0 560 560">
-        <circle class="track" cx="280" cy="280" r="256"/>
-        <circle class="prog" id="tmProg" cx="280" cy="280" r="256"
-          stroke-dasharray="1608.5" stroke-dashoffset="0" transform="rotate(-90 280 280)"/>
-      </svg>
-      <div class="tm-digits">
-        <p class="clk" id="tmClock">40:00</p>
-        <p class="st" id="tmState">Ready</p>
+    <div class="tm-cols">
+      <div class="claim-card" data-reveal>
+        <p class="ct">Claim a Calibrate link for your group</p>
+        <svg class="qr" viewBox="-2 -2 29 29" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect x="-2" y="-2" width="29" height="29" fill="#FFFFFF"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM14 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM12 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM11 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM16 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM1 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM11 10h1v1h-1zM15 10h1v1h-1zM18 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM24 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM11 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM15 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM24 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM4 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM15 15h1v1h-1zM20 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM10 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM8 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM23 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM20 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM14 23h1v1h-1zM15 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM18 24h1v1h-1zM21 24h1v1h-1zM24 24h1v1h-1z" fill="#0B2341"/></svg>
+        <p class="cu"><a href="http://bit.ly/44QhF4e" target="_blank" rel="noopener">bit.ly/44QhF4e</a></p>
+        <p class="cd">In your table's domain block, type your name next to the lowest unclaimed code &mdash; that row's link is yours. <strong>Everyone sees the sheet live; a named row is taken.</strong></p>
       </div>
-    </div>
 
-    <div class="tm-controls" data-reveal>
-      <div class="tm-group">
-        <span class="glab">Set</span>
-        <button class="tm-btn" type="button" data-min="5">5 min</button>
-        <button class="tm-btn" type="button" data-min="15">15 min</button>
-        <button class="tm-btn active" type="button" data-min="40">40 min</button>
-      </div>
-      <div class="tm-group">
-        <button class="tm-btn" type="button" id="tmMinus">&minus;1 min</button>
-        <button class="tm-btn" type="button" id="tmPlus">+1 min</button>
-      </div>
-      <div class="tm-group">
-        <button class="tm-btn primary" type="button" id="tmStart">Start</button>
-        <button class="tm-btn" type="button" id="tmReset">Reset</button>
+      <div class="tm-col">
+        <div class="tm-ring" data-reveal="scale">
+          <svg viewBox="0 0 560 560">
+            <circle class="track" cx="280" cy="280" r="256"/>
+            <circle class="prog" id="tmProg" cx="280" cy="280" r="256"
+              stroke-dasharray="1608.5" stroke-dashoffset="0" transform="rotate(-90 280 280)"/>
+          </svg>
+          <div class="tm-digits">
+            <p class="clk" id="tmClock">40:00</p>
+            <p class="st" id="tmState">Ready</p>
+          </div>
+        </div>
+
+        <div class="tm-controls" data-reveal>
+          <div class="tm-group">
+            <span class="glab">Set</span>
+            <button class="tm-btn" type="button" data-min="5">5 min</button>
+            <button class="tm-btn" type="button" data-min="15">15 min</button>
+            <button class="tm-btn active" type="button" data-min="40">40 min</button>
+          </div>
+          <div class="tm-group">
+            <button class="tm-btn" type="button" id="tmMinus">&minus;1 min</button>
+            <button class="tm-btn" type="button" id="tmPlus">+1 min</button>
+          </div>
+          <div class="tm-group">
+            <button class="tm-btn primary" type="button" id="tmStart">Start</button>
+            <button class="tm-btn" type="button" id="tmReset">Reset</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
