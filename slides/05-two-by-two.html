@@ -8,9 +8,37 @@
 <link rel="stylesheet" href="shared/taf.css">
 <style>
   h1 { font-size: 52px; }
-  .tb-grid { margin-top: 22px; flex: 1; min-height: 0; display: grid;
+  .tb-outer { margin-top: 22px; flex: 1; min-height: 0; position: relative;
+    display: flex; flex-direction: column; }
+  .tb-grid { flex: 1; min-height: 0; display: grid;
     grid-template-columns: 280px minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: 128px minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+  /* Context frame: draws around the whole table (headers included) after the
+     cards reveal, then a caption pill fades in on the bottom edge. */
+  .tb-frame { position: absolute; inset: -16px -20px; pointer-events: none; z-index: 5; }
+  .tb-frame svg.box { width: 100%; height: 100%; display: block; overflow: visible; }
+  .tb-frame rect { x: 2px; y: 2px; width: calc(100% - 4px); height: calc(100% - 4px); rx: 18px;
+    fill: none; stroke: var(--gold-warm); stroke-width: 3.5px;
+    stroke-dasharray: 1; stroke-dashoffset: 1; }
+  body.anim-go .tb-frame rect { stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.1s cubic-bezier(0.4, 0.1, 0.3, 1) 1.55s; }
+  .tb-frame-tag { position: absolute; left: 4px; bottom: 0;
+    transform: translateY(calc(100% + 22px));
+    display: flex; align-items: center; gap: 12px; background: var(--navy-deep);
+    border-radius: 999px; padding: 10px 28px; box-shadow: var(--shadow-md);
+    white-space: nowrap; opacity: 0; }
+  .tb-frame-tag svg { width: 24px; height: 24px; stroke: var(--gold); fill: none;
+    stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .tb-frame-tag p { margin: 0; font-size: 19px; font-weight: 400; color: #C9D4E0; line-height: 1.3; }
+  .tb-frame-tag p strong { color: var(--gold); font-weight: 800; }
+  body.anim-go .tb-frame-tag { opacity: 1; transform: translateY(calc(100% + 8px));
+    transition: opacity 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 2.6s,
+      transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) 2.6s; }
+  body.anim-static .tb-frame rect, body.anim-static .tb-frame-tag { transition: none !important; }
+  @media print {
+    .tb-frame rect { stroke-dashoffset: 0 !important; transition: none !important; }
+    .tb-frame-tag { opacity: 1 !important; transform: translateY(calc(100% + 8px)) !important; transition: none !important; }
+  }
   .tb-axis { display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; min-height: 0; }
   .tb-axis .a { font-size: 28px; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.18; }
@@ -61,6 +89,7 @@
     <h2 data-reveal> But in the context of NGOs iteratively developing AI tools where agency may or may not be central to the theory of change... </h2>
     <h1 data-reveal> What you need to measure also depends on the <span class="accent">forms of agency and how agency manifests</span> in your product.</h1>
 
+    <div class="tb-outer">
     <div class="tb-grid">
       <div></div>
       <div class="tb-axis" data-reveal>
@@ -181,6 +210,15 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="tb-frame" aria-hidden="true">
+      <svg class="box"><rect pathLength="1"/></svg>
+      <div class="tb-frame-tag">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <p><strong>Mind the social setting:</strong> norms and relationships can also shape these questions; interpret the answers in your users' contexts.</p>
+      </div>
+    </div>
     </div>
 
   </div>
